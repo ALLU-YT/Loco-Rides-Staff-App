@@ -65,6 +65,10 @@ flutter:
     - lib\assets\motorbike 1.png
     - lib\assets\customer-service 1.png
     - lib\assets\bg 3.png
+    - lib\assets\arrow-left-02 (1).png
+    - lib\assets\Royal Enfield classic 1.png
+    - lib\assets\location-05.png
+    - lib\assets\Calling.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

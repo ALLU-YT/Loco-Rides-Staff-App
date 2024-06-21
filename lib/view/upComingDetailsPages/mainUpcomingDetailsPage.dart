@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:loco_rides_staff_app/view/bookingPages/upComingPage.dart';
+import 'package:loco_rides_staff_app/view/dashBoardPage.dart';
+import 'package:page_transition/page_transition.dart';
 
-class BooskingPage extends StatelessWidget {
-  const BooskingPage({super.key});
+class MainUpcomingDetailsPage extends StatelessWidget {
+  const MainUpcomingDetailsPage({super.key});
 
   // Method to create a tab with given text and count
   Widget _buildTab(String text, int count) {
@@ -78,28 +80,67 @@ class BooskingPage extends StatelessWidget {
       initialIndex: 0,
       length: 4,
       child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.orange,
-          title: const Text(
-            "Dashboard",
-            style: TextStyle(fontSize: 20),
-          ),
-          centerTitle: true,
-          actions: [
-            Padding(
-              padding: const EdgeInsets.only(right: 16.0),
-              child: IconButton(
-                icon: const Icon(Icons.power_settings_new),
-                onPressed: () {
-                  // Implement your power button functionality here
-                },
-              ),
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(80.0),
+          child: AppBar(
+            automaticallyImplyLeading: false,
+            backgroundColor: Colors.orange,
+            title: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const SizedBox(
+                  height: 23,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(
+                          PageTransition(
+                            child:
+                                const DashBoardPage(), // Navigate to the Organization screen
+                            type: PageTransitionType
+                                .fade, // Set the transition type to fade
+                          ),
+                        );
+                      },
+                      child: Container(
+                        width: 51.89,
+                        height: 32,
+                        decoration: ShapeDecoration(
+                          color: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(53),
+                          ),
+                        ),
+                        child: const Center(
+                          child: Image(
+                            image:
+                                AssetImage('lib/assets/arrow-left-02 (1).png'),
+                            width: 40,
+                          ),
+                        ),
+                      ),
+                    ),
+                    const Text("DashBoard"),
+                    IconButton(
+                      icon: const Icon(Icons.power_settings_new),
+                      onPressed: () {
+                        // Implement your power button functionality here
+                      },
+                    ),
+                  ],
+                ),
+              ],
             ),
-          ],
+          ),
         ),
         body: Column(
-          children: [ 
-            const SizedBox(height: 10,),
+          children: [
+            const SizedBox(
+              height: 10,
+            ),
             TabBar(
               tabAlignment: TabAlignment.start,
               isScrollable: true,

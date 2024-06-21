@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:loco_rides_staff_app/view/demo.dart';
+import 'package:loco_rides_staff_app/view/mainBookingPage.dart';
 import 'package:page_transition/page_transition.dart';
 
 class DashBoardPage extends StatelessWidget {
