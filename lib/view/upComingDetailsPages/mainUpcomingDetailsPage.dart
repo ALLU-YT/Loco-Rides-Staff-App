@@ -1,75 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:loco_rides_staff_app/view/bookingPages/upComingPage.dart';
-import 'package:loco_rides_staff_app/view/dashBoardPage.dart';
+import 'package:loco_rides_staff_app/view/mainBookingPage.dart';
+import 'package:loco_rides_staff_app/view/upComingDetailsPages/customerDetailsPage.dart';
 import 'package:page_transition/page_transition.dart';
 
 class MainUpcomingDetailsPage extends StatelessWidget {
   const MainUpcomingDetailsPage({super.key});
 
   // Method to create a tab with given text and count
-  Widget _buildTab(String text, int count) {
+  Widget _buildTab(String text) {
     return Tab(
-      child: SizedBox(
-        width: 140,
-        height: 35,
-        child: Stack(
-          children: [
-            Container(
-              width: 140,
-              height: 35,
-              decoration: ShapeDecoration(
-                color: const Color(0xFFE8E8E8),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(23.79),
-                ),
-              ),
-            ),
-            Positioned(
-              left: 10,
-              top: 10,
-              child: Text(
-                text,
-                style: const TextStyle(
-                  color: Color(0xFF418CFF),
-                  fontSize: 12,
-                  fontFamily: 'Roboto',
-                  fontWeight: FontWeight.w400,
-                  height: 0,
-                ),
-              ),
-            ),
-            Positioned(
-              left: 110.41,
-              top: 4.62,
-              child: Container(
-                width: 25.74,
-                height: 25.82,
-                decoration: ShapeDecoration(
-                  color: const Color(0xFFC9C9C9),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(23.79),
-                  ),
-                ),
-              ),
-            ),
-            Positioned(
-              left: 115,
-              top: 10,
-              child: Text(
-                '$count',
-                style: const TextStyle(
-                  color: Colors.black,
-                  fontSize: 11.90,
-                  fontFamily: 'Roboto',
-                  fontWeight: FontWeight.w700,
-                  height: 0,
-                ),
-              ),
-            ),
-          ],
-        ),
+        child: Text(
+      text,
+      style: const TextStyle(
+        color: Colors.black,
+        fontSize: 15,
+        fontFamily: 'Roboto',
+        fontWeight: FontWeight.w400,
+        height: 0,
       ),
-    );
+    ));
   }
 
   @override
@@ -99,7 +48,7 @@ class MainUpcomingDetailsPage extends StatelessWidget {
                         Navigator.of(context).push(
                           PageTransition(
                             child:
-                                const DashBoardPage(), // Navigate to the Organization screen
+                                const BooskingPage(), // Navigate to the Organization screen
                             type: PageTransitionType
                                 .fade, // Set the transition type to fade
                           ),
@@ -123,12 +72,24 @@ class MainUpcomingDetailsPage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const Text("DashBoard"),
-                    IconButton(
-                      icon: const Icon(Icons.power_settings_new),
-                      onPressed: () {
-                        // Implement your power button functionality here
-                      },
+                    const Text(
+                      'Bookings',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 19,
+                        fontFamily: 'Roboto',
+                        fontWeight: FontWeight.w500,
+                        height: 0,
+                      ),
+                    ),
+                    Container(
+                      width: 50.0,
+                      decoration: ShapeDecoration(
+                        color: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(53),
+                        ),
+                      ),
                     ),
                   ],
                 ),
@@ -146,17 +107,17 @@ class MainUpcomingDetailsPage extends StatelessWidget {
               isScrollable: true,
               indicatorColor: Colors.orange,
               tabs: <Widget>[
-                _buildTab('Upcoming', 12),
-                _buildTab('Upcoming', 12),
-                _buildTab('Upcoming', 12),
-                _buildTab('Upcoming', 12),
+                _buildTab('Customer details'),
+                _buildTab('Booking details'),
+                _buildTab('Transaction'),
+                _buildTab('Upcoming'),
               ],
             ),
             const Expanded(
               child: TabBarView(
                 children: <Widget>[
                   Center(
-                    child: Upcomingpage(),
+                    child: CustomerDetails(),
                   ),
                   Center(
                     child: Text("It's rainy here"),

@@ -123,7 +123,16 @@ class BooskingPage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const Text("DashBoard"),
+                    const Text(
+                      'Bookings',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 19,
+                        fontFamily: 'Roboto',
+                        fontWeight: FontWeight.w500,
+                        height: 0,
+                      ),
+                    ),
                     IconButton(
                       icon: const Icon(Icons.power_settings_new),
                       onPressed: () {

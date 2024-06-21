@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:loco_rides_staff_app/view/upComingDetailsPages/mainUpcomingDetailsPage.dart';
+import 'package:page_transition/page_transition.dart';
 
-class Upcomingpage extends StatelessWidget {
+class Upcomingpage extends StatefulWidget {
   const Upcomingpage({super.key});
 
+  @override
+  State<Upcomingpage> createState() => _UpcomingpageState();
+}
+
+class _UpcomingpageState extends State<Upcomingpage> {
   @override
   Widget build(BuildContext context) {
     final double customWidth = MediaQuery.of(context).size.width;
@@ -15,6 +22,12 @@ class Upcomingpage extends StatelessWidget {
             children: [
               for (int i = 0; i <= 5; i++)
                 InkWell(
+                  onTap: () {
+                    print("object");
+                    Navigator.of(context).push(PageTransition(
+                        child: const MainUpcomingDetailsPage(),
+                        type: PageTransitionType.fade));
+                  },
                   child: Container(
                     margin: const EdgeInsets.only(top: 20),
                     width: 339,
@@ -229,29 +242,32 @@ class Upcomingpage extends StatelessWidget {
                                   )
                                 ],
                               ),
-                              Row(
+
+                              // DROPPOFF UI
+                              const SizedBox(
+                                width: 40,
+                              ),
+                              const Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  const SizedBox(
-                                    width: 40,
+                                  Text(
+                                    'Dropoff',
+                                    textAlign: TextAlign.start,
+                                    style: TextStyle(
+                                      color: Color(0xFF6E6E6E),
+                                      fontSize: 11.78,
+                                      fontFamily: 'Roboto',
+                                      fontWeight: FontWeight.w400,
+                                      height: 0,
+                                    ),
                                   ),
                                   Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                    crossAxisAlignment: CrossAxisAlignment.end,
                                     children: [
-                                      const Text(
-                                        'Dropoff',
-                                        style: TextStyle(
-                                          color: Color(0xFF6E6E6E),
-                                          fontSize: 11.78,
-                                          fontFamily: 'Roboto',
-                                          fontWeight: FontWeight.w400,
-                                          height: 0,
-                                        ),
-                                      ),
-                                      const SizedBox(
+                                      SizedBox(
                                         height: 5,
                                       ),
-                                      const Text(
+                                      Text(
                                         '05 Sep 2029 | 10:00 am',
                                         style: TextStyle(
                                           color: Colors.black,
@@ -261,21 +277,21 @@ class Upcomingpage extends StatelessWidget {
                                           height: 0,
                                         ),
                                       ),
-                                      const SizedBox(
+                                      SizedBox(
                                         height: 8,
                                       ),
                                       Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.end,
                                         children: [
-                                          SizedBox(
-                                            width: customWidth * .2 + 10,
-                                          ),
-                                          const Image(
+                                          Image(
                                             image: AssetImage(
                                                 'lib/assets/Calling.png'),
                                             width: 60,
+                                            fit: BoxFit.cover,
                                           ),
                                         ],
-                                      )
+                                      ),
                                     ],
                                   ),
                                 ],
