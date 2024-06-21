@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loco_rides_staff_app/view/bookingPages/upComingPage.dart';
 
 class BooskingPage extends StatelessWidget {
   const BooskingPage({super.key});
@@ -97,8 +98,10 @@ class BooskingPage extends StatelessWidget {
           ],
         ),
         body: Column(
-          children: [
+          children: [ 
+            const SizedBox(height: 10,),
             TabBar(
+              tabAlignment: TabAlignment.start,
               isScrollable: true,
               indicatorColor: Colors.orange,
               tabs: <Widget>[
@@ -112,7 +115,7 @@ class BooskingPage extends StatelessWidget {
               child: TabBarView(
                 children: <Widget>[
                   Center(
-                    child: screen1(),
+                    child: Upcomingpage(),
                   ),
                   Center(
                     child: Text("It's rainy here"),
@@ -130,14 +133,5 @@ class BooskingPage extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class screen1 extends StatelessWidget {
-  const screen1({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
   }
 }

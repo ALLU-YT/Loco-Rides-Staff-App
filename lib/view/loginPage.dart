@@ -177,7 +177,7 @@ class LoginPage extends StatelessWidget {
                   gradient: const LinearGradient(
                     begin: Alignment(-1.00, 0.00),
                     end: Alignment(1, 0),
-                    colors: [Color(0xFFFF7134), Color(0xFFFF4D00)],
+                    colors: [Color(0xFFFF7134), Color(0xFFFF4D00),],
                   ),
                 ),
                 child: Container(
