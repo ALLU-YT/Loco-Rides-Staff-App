@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:loco_rides_staff_app/view/bookingPages/upComingPage.dart';
 import 'package:loco_rides_staff_app/view/dashBoardPage.dart';
+import 'package:loco_rides_staff_app/view/inventory/bikesAvailablePage.dart';
 import 'package:page_transition/page_transition.dart';
 
-class BooskingPage extends StatelessWidget {
-  const BooskingPage({super.key});
+class BikesMainPage extends StatelessWidget {
+  const BikesMainPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -91,9 +91,9 @@ class BooskingPage extends StatelessWidget {
               isScrollable: true,
               indicatorColor: Colors.orange,
               tabs: <Widget>[
-                _buildTab('Upcoming', 12),
-                _buildTab('Upcoming', 12),
-                _buildTab('Upcoming', 12),
+                _buildTab('Available', 12),
+                _buildTab('Ongoing', 8),
+                _buildTab('unavailable', 12),
                 _buildTab('Upcoming', 12),
               ],
             ),
@@ -101,7 +101,7 @@ class BooskingPage extends StatelessWidget {
               child: TabBarView(
                 children: <Widget>[
                   Center(
-                    child: Upcomingpage(),
+                    child: BikersAvailablePage(),
                   ),
                   Center(
                     child: Text("It's rainy here"),
@@ -165,19 +165,17 @@ class BooskingPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(23.79),
                   ),
                 ),
-              ),
-            ),
-            Positioned(
-              left: 115,
-              top: 10,
-              child: Text(
-                '$count',
-                style: const TextStyle(
-                  color: Colors.black,
-                  fontSize: 11.90,
-                  fontFamily: 'Roboto',
-                  fontWeight: FontWeight.w700,
-                  height: 0,
+                child: Center(
+                  child: Text(
+                    '$count',
+                    style: const TextStyle(
+                      color: Colors.black,
+                      fontSize: 11.90,
+                      fontFamily: 'Roboto',
+                      fontWeight: FontWeight.w700,
+                      height: 0,
+                    ),
+                  ),
                 ),
               ),
             ),

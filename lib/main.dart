@@ -1,8 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:loco_rides_staff_app/controler/CustomerDetailsNextButtonProvider.dart';
 import 'package:loco_rides_staff_app/view/loginPage.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (_) => TabProvider(),
+        ),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

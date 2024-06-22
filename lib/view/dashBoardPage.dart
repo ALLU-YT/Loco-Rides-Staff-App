@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loco_rides_staff_app/view/inventory/inventoryDashboard.dart';
 import 'package:loco_rides_staff_app/view/mainBookingPage.dart';
 import 'package:page_transition/page_transition.dart';
 
@@ -111,46 +112,58 @@ class DashBoardPage extends StatelessWidget {
                   Column(
                     children: [
                       const SizedBox(height: 20),
-                      Container(
-                        width: customWidth,
-                        height: 100,
-                        decoration: ShapeDecoration(
-                          color: Colors.white,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).push(
+                            PageTransition(
+                              child:
+                                  const InventoryDashboard(), // Navigate to the Organization screen
+                              type: PageTransitionType
+                                  .fade, // Set the transition type to fade
+                            ),
+                          );
+                        },
+                        child: Container(
+                          width: customWidth,
+                          height: 100,
+                          decoration: ShapeDecoration(
+                            color: Colors.white,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            shadows: const [
+                              BoxShadow(
+                                color: Color(0x3F000000),
+                                blurRadius: 4,
+                                offset: Offset(0, 0),
+                                spreadRadius: 0,
+                              )
+                            ],
                           ),
-                          shadows: const [
-                            BoxShadow(
-                              color: Color(0x3F000000),
-                              blurRadius: 4,
-                              offset: Offset(0, 0),
-                              spreadRadius: 0,
-                            )
-                          ],
-                        ),
-                        child: const Row(
-                          children: [
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Image(
-                              image: AssetImage('lib/assets/motorbike 1.png'),
-                              width: 80,
-                              height: 70,
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Text(
-                              'Inventory',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 23,
-                                fontFamily: 'Roboto',
-                                fontWeight: FontWeight.w500,
+                          child: const Row(
+                            children: [
+                              SizedBox(
+                                width: 10,
                               ),
-                            )
-                          ],
+                              Image(
+                                image: AssetImage('lib/assets/motorbike 1.png'),
+                                width: 80,
+                                height: 70,
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                'Inventory',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 23,
+                                  fontFamily: 'Roboto',
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              )
+                            ],
+                          ),
                         ),
                       )
                     ],
