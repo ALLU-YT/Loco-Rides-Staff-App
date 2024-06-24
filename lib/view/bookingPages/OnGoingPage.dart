@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:loco_rides_staff_app/view/upComingDetailsPages/mainUpcomingDetailsPage.dart';
+import 'package:loco_rides_staff_app/view/OnGoingDetails/MainOnGoingPage.dart';
 import 'package:page_transition/page_transition.dart';
 
-class Upcomingpage extends StatefulWidget {
-  const Upcomingpage({super.key});
+class OnGoingPage extends StatefulWidget {
+  const OnGoingPage({super.key});
 
   @override
-  State<Upcomingpage> createState() => _UpcomingpageState();
+  State<OnGoingPage> createState() => _UpcomingpageState();
 }
 
-class _UpcomingpageState extends State<Upcomingpage> {
+class _UpcomingpageState extends State<OnGoingPage> {
   @override
   Widget build(BuildContext context) {
     final double customWidth = MediaQuery.of(context).size.width;
@@ -25,7 +25,7 @@ class _UpcomingpageState extends State<Upcomingpage> {
                   onTap: () {
                     print("object");
                     Navigator.of(context).push(PageTransition(
-                        child: const MainUpcomingDetailsPage(),
+                        child: const MainOnGoingPage(),
                         type: PageTransitionType.fade));
                   },
                   child: Container(

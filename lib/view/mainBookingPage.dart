@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loco_rides_staff_app/view/bookingPages/OnGoingPage.dart';
 import 'package:loco_rides_staff_app/view/bookingPages/upComingPage.dart';
 import 'package:loco_rides_staff_app/view/dashBoardPage.dart';
 import 'package:page_transition/page_transition.dart';
@@ -92,7 +93,7 @@ class BooskingPage extends StatelessWidget {
               indicatorColor: Colors.orange,
               tabs: <Widget>[
                 _buildTab('Upcoming', 12),
-                _buildTab('Upcoming', 12),
+                _buildTab('OnGoing', 12),
                 _buildTab('Upcoming', 12),
                 _buildTab('Upcoming', 12),
               ],
@@ -104,7 +105,7 @@ class BooskingPage extends StatelessWidget {
                     child: Upcomingpage(),
                   ),
                   Center(
-                    child: Text("It's rainy here"),
+                    child: OnGoingPage(),
                   ),
                   Center(
                     child: Text("It's sunny here"),

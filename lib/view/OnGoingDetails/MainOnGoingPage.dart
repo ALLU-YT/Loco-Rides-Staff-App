@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:loco_rides_staff_app/controler/CustomerDetailsNextButtonProvider.dart';
+import 'package:loco_rides_staff_app/view/OnGoingDetails/OnGoingBookingDetails.dart';
 import 'package:loco_rides_staff_app/view/mainBookingPage.dart';
-import 'package:loco_rides_staff_app/view/upComingDetailsPages/upComingBookingDetails.dart';
 import 'package:loco_rides_staff_app/view/upComingDetailsPages/upComingTransaction.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 
-import 'customerDetailsPage.dart';
+import 'OnGoingCustomerDetails.dart';
 
-class MainUpcomingDetailsPage extends StatefulWidget {
-  const MainUpcomingDetailsPage({super.key});
+class MainOnGoingPage extends StatefulWidget {
+  const MainOnGoingPage({super.key});
 
   @override
   _MainUpcomingDetailsPageState createState() =>
       _MainUpcomingDetailsPageState();
 }
 
-class _MainUpcomingDetailsPageState extends State<MainUpcomingDetailsPage>
+class _MainUpcomingDetailsPageState extends State<MainOnGoingPage>
     with SingleTickerProviderStateMixin {
   @override
   void initState() {
@@ -135,8 +135,8 @@ class _MainUpcomingDetailsPageState extends State<MainUpcomingDetailsPage>
                 return TabBarView(
                   controller: tabProvider.tabController,
                   children: const <Widget>[
-                    Center(child: CustomerDetails()),
-                    Center(child: UpComingBookingDetails()),
+                    Center(child: OnGoingCustomerDetails()),
+                    Center(child: OnGoingBookingDetails()),
                     Center(child: UpComingTransation()),
                     Center(
                       child: Text("Upcoming"),

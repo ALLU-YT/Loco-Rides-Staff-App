@@ -38,6 +38,8 @@ dependencies:
   page_transition: ^2.1.0
   dotted_border: ^2.1.0
   provider: ^6.1.2
+  slider_button: ^2.1.0
+  slidable_button: ^3.0.0+1
 
 dev_dependencies:
   flutter_test:
@@ -74,6 +76,13 @@ flutter:
     - lib\assets\add-circle-half-dot.png
     - lib\assets\helmet 1.png
     - lib\assets\Group 150.png
+    - lib\assets\Vector.png
+    - lib\assets\Frame 2.png
+    - lib\assets\cancel-square.png
+    - lib\assets\helmet 1.png
+    - lib\assets\Layer_x0020_1.png
+    - lib\assets\XMLID_2913_.png
+    - lib\assets\pdf 1.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

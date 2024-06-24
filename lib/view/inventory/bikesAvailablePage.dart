@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:loco_rides_staff_app/view/inventory/bikeMenus/OwnerDetails.dart';
+import 'package:loco_rides_staff_app/view/inventory/bikeMenus/RepairDetails.dart';
+import 'package:loco_rides_staff_app/view/inventory/bikeMenus/VechicleDetails.dart';
+import 'package:page_transition/page_transition.dart';
 
 class BikersAvailablePage extends StatefulWidget {
   const BikersAvailablePage({super.key});
@@ -14,30 +18,23 @@ class _UpcomingpageState extends State<BikersAvailablePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 25),
-        child: Container(
-          child: ListView.builder(
-            itemCount: 6,
-            itemBuilder: (context, index) {
-              return InkWell(
-                onTap: () {
-                  setState(() {
-                    // Close the previously open dropdown if any
-                    if (currentOpenIndex != -1) {
-                      dropdownVisibleList[currentOpenIndex] = false;
-                    }
-                    // Toggle visibility for the clicked item
-                    dropdownVisibleList[index] = !dropdownVisibleList[index];
-                    // Update the currently open index
-                    if (dropdownVisibleList[index]) {
-                      currentOpenIndex = index;
-                    } else {
-                      currentOpenIndex = -1; // Reset if closed
-                    }
-                  });
-                },
-                child: Container(
+      body: GestureDetector(
+        onTap: () {
+          // Close the currently open dropdown if any
+          if (currentOpenIndex != -1) {
+            setState(() {
+              dropdownVisibleList[currentOpenIndex] = false;
+              currentOpenIndex = -1;
+            });
+          }
+        },
+        child: Padding(
+          padding: const EdgeInsets.all(10),
+          child: Container(
+            child: ListView.builder(
+              itemCount: 6,
+              itemBuilder: (context, index) {
+                return Container(
                   margin: const EdgeInsets.only(top: 20),
                   width: 339,
                   decoration: ShapeDecoration(
@@ -68,7 +65,7 @@ class _UpcomingpageState extends State<BikersAvailablePage> {
                               ],
                             ),
                             child: const Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 30),
+                              padding: EdgeInsets.fromLTRB(8, 0, 8, 0),
                               child: Column(
                                 children: [
                                   SizedBox(height: 15),
@@ -225,18 +222,25 @@ class _UpcomingpageState extends State<BikersAvailablePage> {
                         child: IconButton(
                           onPressed: () {
                             setState(() {
-                              // Close the previously open dropdown if any
-                              if (currentOpenIndex != -1) {
-                                dropdownVisibleList[currentOpenIndex] = false;
-                              }
-                              // Toggle visibility for the clicked item
-                              dropdownVisibleList[index] =
-                                  !dropdownVisibleList[index];
-                              // Update the currently open index
-                              if (dropdownVisibleList[index]) {
-                                currentOpenIndex = index;
+                              // Close the currently open dropdown if it's the same as the clicked one
+                              if (currentOpenIndex == index &&
+                                  dropdownVisibleList[index]) {
+                                dropdownVisibleList[index] = false;
+                                currentOpenIndex = -1; // Reset
                               } else {
-                                currentOpenIndex = -1; // Reset if closed
+                                // Close the previously open dropdown if any
+                                if (currentOpenIndex != -1) {
+                                  dropdownVisibleList[currentOpenIndex] = false;
+                                }
+                                // Toggle visibility for the clicked item
+                                dropdownVisibleList[index] =
+                                    !dropdownVisibleList[index];
+                                // Update the currently open index
+                                if (dropdownVisibleList[index]) {
+                                  currentOpenIndex = index;
+                                } else {
+                                  currentOpenIndex = -1; // Reset if closed
+                                }
                               }
                             });
                           },
@@ -252,63 +256,125 @@ class _UpcomingpageState extends State<BikersAvailablePage> {
                           top: 40,
                           right: 20,
                           child: Container(
+                            width: 158,
                             decoration: ShapeDecoration(
-                              color: const Color(0xFFD9D9D9),
+                              color: const Color.fromARGB(255, 0, 0, 0),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(8),
                               ),
                             ),
                             child: Column(
                               children: [
-                                Container(
-                                  margin:
-                                      const EdgeInsets.fromLTRB(15, 15, 15, 0),
-                                  child: const Text(
-                                    'Owner Details',
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 14,
-                                      fontFamily: 'Roboto',
-                                      fontWeight: FontWeight.w400,
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  width: 130,
-                                  decoration: const ShapeDecoration(
-                                    shape: RoundedRectangleBorder(
-                                      side: BorderSide(
-                                        width: 1,
-                                        strokeAlign:
-                                            BorderSide.strokeAlignCenter,
-                                        color: Colors.white,
+                                SizedBox(
+                                  width: 150,
+                                  child: ElevatedButton(
+                                    style: ButtonStyle(
+                                      backgroundColor:
+                                          WidgetStateProperty.all<Color>(
+                                              const Color.fromARGB(
+                                                  109, 255, 255, 255)),
+                                      shape: WidgetStateProperty.all<
+                                          OutlinedBorder>(
+                                        RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(8),
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                ),
-                                Container(
-                                  margin:
-                                      const EdgeInsets.fromLTRB(15, 10, 15, 0),
-                                  child: const Text(
-                                    'Owner Details',
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 14,
-                                      fontFamily: 'Roboto',
-                                      fontWeight: FontWeight.w400,
+                                    onPressed: () {
+                                      Navigator.of(context).push(
+                                        PageTransition(
+                                          child: const OwnerDetailsPage(),
+                                          type: PageTransitionType.fade,
+                                        ),
+                                      );
+                                    },
+                                    child: const Text(
+                                      "Owner Details",
+                                      style: TextStyle(color: Colors.white),
                                     ),
                                   ),
                                 ),
-                                Container(
-                                  width: 130,
-                                  decoration: const ShapeDecoration(
-                                    shape: RoundedRectangleBorder(
-                                      side: BorderSide(
-                                        width: 1,
-                                        strokeAlign:
-                                            BorderSide.strokeAlignCenter,
-                                        color: Colors.white,
+                                SizedBox(
+                                  width: 150,
+                                  child: ElevatedButton(
+                                    style: ButtonStyle(
+                                      backgroundColor:
+                                          WidgetStateProperty.all<Color>(
+                                              const Color.fromARGB(
+                                                  61, 241, 140, 6)),
+                                      shape: WidgetStateProperty.all<
+                                          OutlinedBorder>(
+                                        RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(8),
+                                        ),
                                       ),
+                                    ),
+                                    onPressed: () {
+                                      Navigator.of(context).push(
+                                        PageTransition(
+                                          child: const VechicleDetailsPage(),
+                                          type: PageTransitionType.fade,
+                                        ),
+                                      );
+                                    },
+                                    child: const Text(
+                                      "Vehicle Details",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 150,
+                                  child: ElevatedButton(
+                                    style: ButtonStyle(
+                                      backgroundColor:
+                                          WidgetStateProperty.all<Color>(
+                                              const Color.fromARGB(
+                                                  61, 241, 140, 6)),
+                                      shape: WidgetStateProperty.all<
+                                          OutlinedBorder>(
+                                        RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(8),
+                                        ),
+                                      ),
+                                    ),
+                                    onPressed: () {
+                                      Navigator.of(context).push(
+                                        PageTransition(
+                                          child: const RepairDetailsPage(),
+                                          type: PageTransitionType.fade,
+                                        ),
+                                      );
+                                    },
+                                    child: const Text(
+                                      "Repair Details",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 150,
+                                  child: ElevatedButton(
+                                    style: ButtonStyle(
+                                      backgroundColor:
+                                          WidgetStateProperty.all<Color>(
+                                              const Color.fromARGB(
+                                                  61, 241, 140, 6)),
+                                      shape: WidgetStateProperty.all<
+                                          OutlinedBorder>(
+                                        RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(8),
+                                        ),
+                                      ),
+                                    ),
+                                    onPressed: () {},
+                                    child: const Text(
+                                      "Modify Status",
+                                      style: TextStyle(color: Colors.white),
                                     ),
                                   ),
                                 ),
@@ -318,9 +384,9 @@ class _UpcomingpageState extends State<BikersAvailablePage> {
                         ),
                     ],
                   ),
-                ),
-              );
-            },
+                );
+              },
+            ),
           ),
         ),
       ),

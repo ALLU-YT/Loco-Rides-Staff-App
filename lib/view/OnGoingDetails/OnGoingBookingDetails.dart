@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:loco_rides_staff_app/controler/CustomerDetailsNextButtonProvider.dart';
 import 'package:provider/provider.dart';
 
-class BookingDetailsPage extends StatefulWidget {
-  const BookingDetailsPage({super.key});
+class OnGoingBookingDetails extends StatefulWidget {
+  const OnGoingBookingDetails({super.key});
 
   @override
-  State<BookingDetailsPage> createState() => _CustomerDetailsState();
+  State<OnGoingBookingDetails> createState() => _CustomerDetailsState();
 }
 
-class _CustomerDetailsState extends State<BookingDetailsPage>
+class _CustomerDetailsState extends State<OnGoingBookingDetails>
     with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
@@ -221,34 +221,33 @@ class _CustomerDetailsState extends State<BookingDetailsPage>
                                         ),
                                       ),
                                       SizedBox(
-                                        width: customWidth * .1 + 10,
+                                        width: customWidth * .1 + 14,
                                       ),
-                                      SizedBox(
-                                        width: customWidth * .4,
+                                      Container(
+                                        width: 142,
                                         height: 36,
-                                        child: TextField(
-                                          decoration: InputDecoration(
-                                            contentPadding:
-                                                const EdgeInsets.symmetric(
-                                                    vertical: 8.0,
-                                                    horizontal: 12.0),
-                                            enabledBorder: OutlineInputBorder(
-                                              borderSide: const BorderSide(
-                                                  color: Color(0xFFD9D9D9),
-                                                  width: 1),
-                                              borderRadius:
-                                                  BorderRadius.circular(6),
-                                            ),
-                                            focusedBorder: OutlineInputBorder(
-                                              borderSide: const BorderSide(
-                                                  color: Color(0xFFD9D9D9),
-                                                  width: 1),
-                                              borderRadius:
-                                                  BorderRadius.circular(6),
+                                        decoration: ShapeDecoration(
+                                          shape: RoundedRectangleBorder(
+                                            side: const BorderSide(
+                                                width: 1,
+                                                color: Color(0xFFD9D9D9)),
+                                            borderRadius:
+                                                BorderRadius.circular(6),
+                                          ),
+                                        ),
+                                        child: const Center(
+                                          child: Text(
+                                            'KL 23D 454',
+                                            style: TextStyle(
+                                              color: Color(0xFF6E6E6E),
+                                              fontSize: 10.78,
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w400,
+                                              height: 0,
                                             ),
                                           ),
                                         ),
-                                      ),
+                                      )
                                     ],
                                   ),
                                   const SizedBox(
@@ -269,34 +268,33 @@ class _CustomerDetailsState extends State<BookingDetailsPage>
                                         ),
                                       ),
                                       const SizedBox(
-                                        width: 25,
+                                        width: 28,
                                       ),
-                                      SizedBox(
-                                        width: customWidth * .4,
+                                      Container(
+                                        width: 142,
                                         height: 36,
-                                        child: TextField(
-                                          decoration: InputDecoration(
-                                            contentPadding:
-                                                const EdgeInsets.symmetric(
-                                                    vertical: 8.0,
-                                                    horizontal: 12.0),
-                                            enabledBorder: OutlineInputBorder(
-                                              borderSide: const BorderSide(
-                                                  color: Color(0xFFD9D9D9),
-                                                  width: 1),
-                                              borderRadius:
-                                                  BorderRadius.circular(6),
-                                            ),
-                                            focusedBorder: OutlineInputBorder(
-                                              borderSide: const BorderSide(
-                                                  color: Color(0xFFD9D9D9),
-                                                  width: 1),
-                                              borderRadius:
-                                                  BorderRadius.circular(6),
+                                        decoration: ShapeDecoration(
+                                          shape: RoundedRectangleBorder(
+                                            side: const BorderSide(
+                                                width: 1,
+                                                color: Color(0xFFD9D9D9)),
+                                            borderRadius:
+                                                BorderRadius.circular(6),
+                                          ),
+                                        ),
+                                        child: const Center(
+                                          child: Text(
+                                            '4567 Km',
+                                            style: TextStyle(
+                                              color: Color(0xFF6E6E6E),
+                                              fontSize: 10.78,
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w400,
+                                              height: 0,
                                             ),
                                           ),
                                         ),
-                                      ),
+                                      )
                                     ],
                                   )
                                 ],
@@ -525,7 +523,7 @@ class _CustomerDetailsState extends State<BookingDetailsPage>
                                       ),
                                       child: const Center(
                                         child: Text(
-                                          'Right Side',
+                                          'Front Side',
                                           style: TextStyle(
                                             color: Colors.black,
                                             fontSize: 10,
@@ -562,7 +560,7 @@ class _CustomerDetailsState extends State<BookingDetailsPage>
                                     ),
                                     Container(
                                       alignment: Alignment.bottomCenter,
-                                      width: customWidth * .5 + 18,
+                                      width: customWidth * .2 + 23,
                                       height: 24,
                                       decoration: const ShapeDecoration(
                                         color: Color(0xFFD9D9D9),
@@ -575,7 +573,7 @@ class _CustomerDetailsState extends State<BookingDetailsPage>
                                       ),
                                       child: const Center(
                                         child: Text(
-                                          'With person and Accessories',
+                                          'Back Side',
                                           style: TextStyle(
                                             color: Colors.black,
                                             fontSize: 10,
@@ -587,6 +585,112 @@ class _CustomerDetailsState extends State<BookingDetailsPage>
                                       ),
                                     ),
                                   ],
+                                ),
+                              ),
+                            ),
+                            Container(
+                              margin: const EdgeInsets.only(right: 5),
+                              child: DottedBorder(
+                                borderType: BorderType.RRect,
+                                radius: const Radius.circular(8.63),
+                                color: Colors.black,
+                                strokeWidth: 1,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    const Padding(
+                                      padding: EdgeInsets.all(20),
+                                      child: Center(
+                                        child: Image(
+                                          image: AssetImage(
+                                              'lib/assets/add-circle-half-dot.png'),
+                                          width: 30,
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                      alignment: Alignment.bottomCenter,
+                                      width: customWidth * .2 + 23,
+                                      height: 24,
+                                      decoration: const ShapeDecoration(
+                                        color: Color(0xFFD9D9D9),
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.only(
+                                            bottomLeft: Radius.circular(8.63),
+                                            bottomRight: Radius.circular(8.63),
+                                          ),
+                                        ),
+                                      ),
+                                      child: const Center(
+                                        child: Text(
+                                          'Left Side',
+                                          style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 10,
+                                            fontFamily: 'Roboto',
+                                            fontWeight: FontWeight.w600,
+                                            height: 0.13,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 12,
+                        ),
+                        Row(
+                          children: [
+                            const Text.rich(
+                              TextSpan(
+                                children: [
+                                  TextSpan(
+                                    text: 'Enter Odomenter Reading:\n',
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 13.78,
+                                      fontFamily: 'Roboto',
+                                      fontWeight: FontWeight.w400,
+                                      height: 0,
+                                    ),
+                                  ),
+                                  TextSpan(
+                                    text: 'After trip',
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 10,
+                                      fontFamily: 'Roboto',
+                                      fontWeight: FontWeight.w400,
+                                      height: 0,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 5,
+                            ),
+                            SizedBox(
+                              width: customWidth * .4,
+                              height: 36,
+                              child: TextField(
+                                decoration: InputDecoration(
+                                  contentPadding: const EdgeInsets.symmetric(
+                                      vertical: 8.0, horizontal: 12.0),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderSide: const BorderSide(
+                                        color: Color(0xFFD9D9D9), width: 1),
+                                    borderRadius: BorderRadius.circular(6),
+                                  ),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: const BorderSide(
+                                        color: Color(0xFFD9D9D9), width: 1),
+                                    borderRadius: BorderRadius.circular(6),
+                                  ),
                                 ),
                               ),
                             ),
