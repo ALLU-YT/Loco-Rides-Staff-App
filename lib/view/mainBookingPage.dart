@@ -1,15 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:loco_rides_staff_app/view/bookingPages/OnGoingCancelledPage.dart';
 import 'package:loco_rides_staff_app/view/bookingPages/OnGoingPage.dart';
 import 'package:loco_rides_staff_app/view/bookingPages/upComingPage.dart';
 import 'package:loco_rides_staff_app/view/dashBoardPage.dart';
 import 'package:page_transition/page_transition.dart';
 
-class BooskingPage extends StatelessWidget {
+class BooskingPage extends StatefulWidget {
   const BooskingPage({super.key});
 
   @override
+  State<BooskingPage> createState() => _BooskingPageState();
+}
+
+class _BooskingPageState extends State<BooskingPage> {
+  bool _isExpanded = false;
+  @override
   Widget build(BuildContext context) {
-    final double customWidth = MediaQuery.of(context).size.width;
+    // final double customWidth = MediaQuery.of(context).size.width;
 
     return DefaultTabController(
       initialIndex: 0,
@@ -18,6 +25,7 @@ class BooskingPage extends StatelessWidget {
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(80.0),
           child: AppBar(
+            actions: [Container()],
             automaticallyImplyLeading: false,
             backgroundColor: Colors.orange,
             title: Column(
@@ -70,10 +78,12 @@ class BooskingPage extends StatelessWidget {
                     ),
                     IconButton(
                       icon: const Icon(
-                        Icons.filter_list_outlined,
+                        Icons.search,
                       ),
                       onPressed: () {
-                        // Implement your filter button functionality here
+                        setState(() {
+                          _isExpanded = !_isExpanded;
+                        });
                       },
                     ),
                   ],
@@ -84,9 +94,11 @@ class BooskingPage extends StatelessWidget {
         ),
         body: Column(
           children: [
-            const SizedBox(
-              height: 10,
-            ),
+            _isExpanded
+                ? const SearchBox()
+                : const SizedBox(
+                    height: 10,
+                  ),
             TabBar(
               tabAlignment: TabAlignment.start,
               isScrollable: true,
@@ -94,7 +106,7 @@ class BooskingPage extends StatelessWidget {
               tabs: <Widget>[
                 _buildTab('Upcoming', 12),
                 _buildTab('OnGoing', 12),
-                _buildTab('Upcoming', 12),
+                _buildTab('Cancelled', 12),
                 _buildTab('Upcoming', 12),
               ],
             ),
@@ -108,7 +120,7 @@ class BooskingPage extends StatelessWidget {
                     child: OnGoingPage(),
                   ),
                   Center(
-                    child: Text("It's sunny here"),
+                    child: Ongoingcancelledpage(),
                   ),
                   Center(
                     child: Text("It's windy here"),
@@ -122,7 +134,7 @@ class BooskingPage extends StatelessWidget {
     );
   }
 
-// Method to create a tab with given text and count
+  // Method to create a tab with given text and count
   Widget _buildTab(String text, int count) {
     return Tab(
       child: SizedBox(
@@ -184,6 +196,39 @@ class BooskingPage extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class SearchBox extends StatelessWidget {
+  const SearchBox({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      // padding: const EdgeInsets.all(0),
+      margin: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.grey),
+        borderRadius: BorderRadius.circular(20.0),
+      ),
+      child: const Row(
+        children: [
+          Padding(
+            padding: EdgeInsets.only(left: 8.0),
+            child: Icon(Icons.search, color: Colors.grey),
+          ),
+          Expanded(
+            child: TextField(
+              decoration: InputDecoration(
+                hintText: 'Search',
+                border: InputBorder.none,
+                contentPadding: EdgeInsets.all(5),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

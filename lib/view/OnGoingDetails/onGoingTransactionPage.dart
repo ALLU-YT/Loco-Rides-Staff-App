@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:slidable_button/slidable_button.dart';
 
-class UpComingTransation extends StatefulWidget {
-  const UpComingTransation({super.key});
+class OnGoingTransationPage extends StatefulWidget {
+  const OnGoingTransationPage({super.key});
 
   @override
-  State<UpComingTransation> createState() => _CustomerDetailsState();
+  State<OnGoingTransationPage> createState() => _CustomerDetailsState();
 }
 
-class _CustomerDetailsState extends State<UpComingTransation>
+class _CustomerDetailsState extends State<OnGoingTransationPage>
     with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
@@ -453,62 +453,7 @@ class _CustomerDetailsState extends State<UpComingTransation>
                         const SizedBox(
                           height: 20,
                         ),
-                        Center(
-                          child: GestureDetector(
-                            onTap: () {
-                              showModalBottomSheet(
-                                showDragHandle: false,
-                                context: context,
-                                builder: (BuildContext context) {
-                                  return const CounterBottomSheet();
-                                },
-                              );
-                            },
-                            child: Container(
-                              width: 312,
-                              height: 45.26,
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(10.14),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.black
-                                        .withOpacity(0.15), // Shadow color
-                                    offset: const Offset(
-                                        0, 4), // Horizontal and vertical offset
-                                    blurRadius: 10, // Blur radius
-                                    spreadRadius: 1, // Spread radius
-                                  ),
-                                ],
-                              ),
-                              child: Container(
-                                padding: const EdgeInsets.all(10),
-                                child: const Center(
-                                    child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      'Add accessories',
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 14.56,
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w500,
-                                        height: 0,
-                                      ),
-                                    ),
-                                    Image(
-                                      image:
-                                          AssetImage('lib/assets/Vector.png'),
-                                      width: 15,
-                                    )
-                                  ],
-                                )),
-                              ),
-                            ),
-                          ),
-                        )
+                        const DropdownContainer(),
                       ],
                     ),
                   ),
@@ -574,423 +519,142 @@ class _CustomerDetailsState extends State<UpComingTransation>
   }
 }
 
-class CheckboxExample extends StatefulWidget {
-  const CheckboxExample({super.key});
+// DropDownContainer
+
+class DropdownContainer extends StatefulWidget {
+  const DropdownContainer({super.key});
 
   @override
-  _CheckboxExampleState createState() => _CheckboxExampleState();
+  _DropdownContainerState createState() => _DropdownContainerState();
 }
 
-class _CheckboxExampleState extends State<CheckboxExample> {
-  bool isClicked = false;
+class _DropdownContainerState extends State<DropdownContainer> {
+  bool _isExpanded = false;
 
   @override
   Widget build(BuildContext context) {
-    return Checkbox(
-      value: isClicked,
-      onChanged: (bool? value) {
-        setState(() {
-          isClicked = value!;
-        });
-      },
-    );
-  }
-}
-
-class CounterBottomSheet extends StatefulWidget {
-  const CounterBottomSheet({super.key});
-
-  @override
-  _CounterBottomSheetState createState() => _CounterBottomSheetState();
-}
-
-class _CounterBottomSheetState extends State<CounterBottomSheet> {
-  int counter = 0;
-
-  void incrementCounter() {
-    setState(() {
-      counter++;
-    });
-  }
-
-  void decrementCounter() {
-    setState(() {
-      counter--;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
+    final double customWidth = MediaQuery.of(context).size.width;
+    return Column(
       children: [
-        Container(
-          padding: const EdgeInsets.all(18),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    'ADD-ONS',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 20,
-                      fontFamily: 'Roboto',
-                      fontWeight: FontWeight.w600,
-                      height: 0,
-                    ),
-                  ),
-                  const Divider(
+        SizedBox(
+          width: MediaQuery.of(context).size.width * 0.9 - 5,
+          height: 45.26,
+          child: ElevatedButton(
+            onPressed: () {
+              setState(() {
+                _isExpanded = !_isExpanded;
+              });
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color.fromARGB(255, 238, 236, 233),
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(10.14),
+                    topRight: Radius.circular(10.14)),
+              ),
+              elevation: 1, // Elevation for 3D effect
+              // shadowColor: Colors.grey,
+            ),
+            child: const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Vehicle Pictures before trip',
+                  style: TextStyle(
                     color: Colors.black,
-                    height: 1,
+                    fontSize: 12.56,
+                    fontFamily: 'Roboto',
+                    fontWeight: FontWeight.w500,
+                    height: 0,
                   ),
-                  Row(
-                    children: [
-                      TextButton(
-                        style: ButtonStyle(
-                          backgroundColor: WidgetStateProperty.all<Color>(
-                              Colors.transparent),
-                        ),
-                        onPressed: () {
-                          Navigator.of(context).pop();
-                        },
-                        child: const Image(
-                          image: AssetImage('lib/assets/cancel-square.png'),
-                          width: 30,
-                        ),
-                      ),
-                    ],
-                  )
-                ],
-              ),
-              const SizedBox(height: 15),
-              const Text(
-                'Helmets',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 15.58,
-                  fontFamily: 'Roboto',
-                  fontWeight: FontWeight.w500,
-                  height: 0,
                 ),
-              ),
-              const SizedBox(height: 15),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    width: MediaQuery.of(context).size.width * 0.4,
-                    padding: const EdgeInsets.fromLTRB(10, 0, 0, 10),
-                    decoration: ShapeDecoration(
-                      color: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10.24),
-                      ),
-                    ),
-                    child: const Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Image(
-                              image: AssetImage('lib/assets/helmet 1.png'),
-                              width: 30,
-                            ),
-                            Checkbox(value: false, onChanged: null),
-                          ],
-                        ),
-                        Text(
-                          '1 Regular Helmet',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 14.68,
-                            fontFamily: 'Roboto',
-                            fontWeight: FontWeight.w400,
-                            height: 0,
-                          ),
-                        ),
-                        SizedBox(height: 5),
-                        Text(
-                          '₹0',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 12.68,
-                            fontFamily: 'Roboto',
-                            fontWeight: FontWeight.w400,
-                            height: 0,
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                  Container(
-                    width: MediaQuery.of(context).size.width * 0.4,
-                    padding: const EdgeInsets.fromLTRB(10, 0, 0, 10),
-                    decoration: ShapeDecoration(
-                      color: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10.24),
-                      ),
-                    ),
-                    child: const Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Image(
-                              image: AssetImage('lib/assets/helmet 1.png'),
-                              width: 30,
-                            ),
-                            Checkbox(value: false, onChanged: null),
-                          ],
-                        ),
-                        Text(
-                          '1 Regular Helmet',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 14.68,
-                            fontFamily: 'Roboto',
-                            fontWeight: FontWeight.w400,
-                            height: 0,
-                          ),
-                        ),
-                        SizedBox(height: 5),
-                        Text(
-                          '₹0',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 12.68,
-                            fontFamily: 'Roboto',
-                            fontWeight: FontWeight.w400,
-                            height: 0,
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 20),
-              const Text(
-                'Others',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 15.58,
-                  fontFamily: 'Roboto',
-                  fontWeight: FontWeight.w500,
-                  height: 0,
-                ),
-              ),
-              const SizedBox(height: 15),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    width: MediaQuery.of(context).size.width * 0.4,
-                    padding: const EdgeInsets.fromLTRB(10, 10, 0, 10),
-                    decoration: ShapeDecoration(
-                      color: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10.24),
-                      ),
-                    ),
-                    child: const Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Image(
-                              image: AssetImage('lib/assets/Layer_x0020_1.png'),
-                              width: 20,
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: 5),
-                        Text(
-                          'Mobile Stand',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 14.68,
-                            fontFamily: 'Roboto',
-                            fontWeight: FontWeight.w400,
-                            height: 0,
-                          ),
-                        ),
-                        SizedBox(height: 5),
-                        Text(
-                          '₹0',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 12.68,
-                            fontFamily: 'Roboto',
-                            fontWeight: FontWeight.w400,
-                            height: 0,
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                  Container(
-                    width: MediaQuery.of(context).size.width * 0.4,
-                    padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                    decoration: ShapeDecoration(
-                      color: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10.24),
-                      ),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const SizedBox(height: 5),
-                        const Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Image(
-                              image: AssetImage('lib/assets/XMLID_2913_.png'),
-                              width: 20,
-                            ),
-                          ],
-                        ),
-                        const SizedBox(height: 5),
-                        const Text(
-                          'Rain Coat',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 14.68,
-                            fontFamily: 'Roboto',
-                            fontWeight: FontWeight.w400,
-                            height: 0,
-                          ),
-                        ),
-                        const SizedBox(height: 5),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const Text(
-                              '₹0',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 12.68,
-                                fontFamily: 'Roboto',
-                                fontWeight: FontWeight.w400,
-                                height: 0,
-                              ),
-                            ),
-                            const SizedBox(
-                              width: 10,
-                            ),
-                            Container(
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  IconButton(
-                                    onPressed: incrementCounter,
-                                    icon: const Icon(Icons.add),
-                                  ),
-                                  Text(
-                                    '$counter',
-                                    style: const TextStyle(fontSize: 20),
-                                  ),
-                                  IconButton(
-                                    onPressed: decrementCounter,
-                                    icon: const Icon(Icons.remove),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        )
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-            ],
+                Image(
+                  image: AssetImage('lib/assets/Vector.png'),
+                  width: 25,
+                )
+              ],
+            ),
           ),
         ),
-        Positioned(
-            bottom: 10,
-            left: 10,
-            right: 10,
-            child: Container(
-              width: MediaQuery.of(context).size.width * 0.9,
-              height: 44,
-              decoration: ShapeDecoration(
-                gradient: const LinearGradient(
-                  begin: Alignment(-1.00, 0.00),
-                  end: Alignment(1, 0),
-                  colors: [Color(0xFFFF7134), Color(0xFFFF4D00)],
-                ),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8.95),
-                ),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        children: [
-                          SizedBox(
-                            width: 8,
-                          ),
-                          Text(
-                            'Amount payable',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 7,
-                              fontFamily: 'Roboto',
-                              fontWeight: FontWeight.w400,
-                              height: 0,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Text(
-                        '₹300.66',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 13.09,
+        AnimatedContainer(
+          margin: const EdgeInsets.only(bottom: 80),
+          width: MediaQuery.of(context).size.width * 0.9 - 5,
+          padding: const EdgeInsets.fromLTRB(14, 10, 10, 10),
+          duration: const Duration(seconds: 1),
+          curve: Curves.easeInExpo,
+          height: _isExpanded ? 200 : 0.0,
+          decoration: const BoxDecoration(
+            border: Border(top: BorderSide(width: 5, color: Colors.white)),
+            color: Color.fromARGB(255, 238, 236, 233),
+            borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(10.14),
+                bottomRight: Radius.circular(10.14)),
+          ),
+          child: _isExpanded
+              ? Column(
+                  children: [
+                    TextField(
+                      decoration: InputDecoration(
+                        labelText: "Add Amount",
+                        labelStyle: const TextStyle(
+                          color: Color.fromARGB(255, 247, 121, 4),
+                          fontSize: 10,
                           fontFamily: 'Roboto',
-                          fontWeight: FontWeight.w700,
+                          fontWeight: FontWeight.w400,
                           height: 0,
                         ),
-                      )
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      TextButton(
-                        onPressed: () {},
-                        child: const Text(
-                          'ADD',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 13.09,
-                            fontFamily: 'Roboto',
-                            fontWeight: FontWeight.w700,
-                            height: 0,
+                        filled:
+                            true, // Fill the background with the specified fillColor
+                        fillColor: const Color.fromARGB(
+                            255, 207, 197, 197), // Set the background color
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8),
+                          borderSide: BorderSide.none,
+                        ),
+                        contentPadding: const EdgeInsets.symmetric(
+                            vertical: 10.0, horizontal: 12.0),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    SizedBox(
+                      width: customWidth * .9,
+                      // height: 200,
+                      child: TextField(
+                        decoration: InputDecoration(
+                          labelText: "Reason",
+                          contentPadding: const EdgeInsets.symmetric(
+                              vertical: 8.0, horizontal: 12.0),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: const BorderSide(
+                                color: Color(0xFFD9D9D9), width: 1),
+                            borderRadius: BorderRadius.circular(6),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: const BorderSide(
+                                color: Color(0xFFD9D9D9), width: 1),
+                            borderRadius: BorderRadius.circular(6),
                           ),
                         ),
                       ),
-                    ],
-                  )
-                ],
-              ),
-            ))
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        ElevatedButton(
+                          onPressed: () {},
+                          child: const Text("Add"),
+                        )
+                      ],
+                    )
+                  ],
+                )
+              : null,
+        ),
       ],
     );
   }

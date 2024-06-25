@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loco_rides_staff_app/view/dashBoardPage.dart';
+import 'package:loco_rides_staff_app/view/inventory/accessories.dart';
 import 'package:loco_rides_staff_app/view/inventory/bikesMainPage.dart';
 import 'package:page_transition/page_transition.dart';
 
@@ -144,16 +145,16 @@ class InventoryDashboard extends StatelessWidget {
                       children: [
                         const SizedBox(height: 20),
                         InkWell(
-                          // onTap: () {
-                          //   Navigator.of(context).push(
-                          //     PageTransition(
-                          //       child:
-                          //           const (), // Navigate to the Organization screen
-                          //       type: PageTransitionType
-                          //           .fade, // Set the transition type to fade
-                          //     ),
-                          //   );
-                          // },
+                          onTap: () {
+                            Navigator.of(context).push(
+                              PageTransition(
+                                child:
+                                    const accessoriesPage(), // Navigate to the Organization screen
+                                type: PageTransitionType
+                                    .fade, // Set the transition type to fade
+                              ),
+                            );
+                          },
                           child: Container(
                             width: customWidth,
                             height: 100,

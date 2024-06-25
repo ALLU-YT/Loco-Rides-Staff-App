@@ -331,270 +331,342 @@ class _CustomerDetailsState extends State<UpComingBookingDetails>
                         const SizedBox(
                           height: 25,
                         ),
-                        Row(
+                        Column(
                           children: [
-                            Container(
-                              margin: const EdgeInsets.only(right: 8),
-                              child: DottedBorder(
-                                borderType: BorderType.RRect,
-                                radius: const Radius.circular(8.63),
-                                color: Colors.black,
-                                strokeWidth: 1,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    const Padding(
-                                      padding: EdgeInsets.all(20),
-                                      child: Center(
-                                        child: Image(
-                                          image: AssetImage(
-                                              'lib/assets/add-circle-half-dot.png'),
-                                          width: 30,
-                                        ),
-                                      ),
-                                    ),
-                                    Container(
-                                      alignment: Alignment.bottomCenter,
-                                      width: customWidth * .2 + 23,
-                                      height: 24,
-                                      decoration: const ShapeDecoration(
-                                        color: Color(0xFFD9D9D9),
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.only(
-                                            bottomLeft: Radius.circular(8.63),
-                                            bottomRight: Radius.circular(8.63),
+                            Row(
+                              children: [
+                                Container(
+                                  margin: const EdgeInsets.only(right: 8),
+                                  child: DottedBorder(
+                                    borderType: BorderType.RRect,
+                                    radius: const Radius.circular(8.63),
+                                    color: Colors.black,
+                                    strokeWidth: 1,
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        const Padding(
+                                          padding: EdgeInsets.all(20),
+                                          child: Center(
+                                            child: Image(
+                                              image: AssetImage(
+                                                  'lib/assets/add-circle-half-dot.png'),
+                                              width: 30,
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                      child: const Center(
-                                        child: Text(
-                                          'Front Side',
-                                          style: TextStyle(
-                                            color: Colors.black,
-                                            fontSize: 10,
-                                            fontFamily: 'Roboto',
-                                            fontWeight: FontWeight.w600,
-                                            height: 0.13,
+                                        Container(
+                                          alignment: Alignment.bottomCenter,
+                                          width: customWidth * .2 + 23,
+                                          height: 24,
+                                          decoration: const ShapeDecoration(
+                                            color: Color(0xFFD9D9D9),
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.only(
+                                                bottomLeft:
+                                                    Radius.circular(8.63),
+                                                bottomRight:
+                                                    Radius.circular(8.63),
+                                              ),
+                                            ),
+                                          ),
+                                          child: const Center(
+                                            child: Text(
+                                              'Front Side',
+                                              style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 10,
+                                                fontFamily: 'Roboto',
+                                                fontWeight: FontWeight.w600,
+                                                height: 0.13,
+                                              ),
+                                            ),
                                           ),
                                         ),
-                                      ),
+                                      ],
                                     ),
-                                  ],
+                                  ),
                                 ),
-                              ),
+                                Container(
+                                  margin: const EdgeInsets.only(right: 8),
+                                  child: DottedBorder(
+                                    borderType: BorderType.RRect,
+                                    radius: const Radius.circular(8.63),
+                                    color: Colors.black,
+                                    strokeWidth: 1,
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        const Padding(
+                                          padding: EdgeInsets.all(20),
+                                          child: Center(
+                                            child: Image(
+                                              image: AssetImage(
+                                                  'lib/assets/add-circle-half-dot.png'),
+                                              width: 30,
+                                            ),
+                                          ),
+                                        ),
+                                        Container(
+                                          alignment: Alignment.bottomCenter,
+                                          width: customWidth * .2 + 23,
+                                          height: 24,
+                                          decoration: const ShapeDecoration(
+                                            color: Color(0xFFD9D9D9),
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.only(
+                                                bottomLeft:
+                                                    Radius.circular(8.63),
+                                                bottomRight:
+                                                    Radius.circular(8.63),
+                                              ),
+                                            ),
+                                          ),
+                                          child: const Center(
+                                            child: Text(
+                                              'Back Side',
+                                              style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 10,
+                                                fontFamily: 'Roboto',
+                                                fontWeight: FontWeight.w600,
+                                                height: 0.13,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  margin: const EdgeInsets.only(right: 5),
+                                  child: DottedBorder(
+                                    borderType: BorderType.RRect,
+                                    radius: const Radius.circular(8.63),
+                                    color: Colors.black,
+                                    strokeWidth: 1,
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        const Padding(
+                                          padding: EdgeInsets.all(20),
+                                          child: Center(
+                                            child: Image(
+                                              image: AssetImage(
+                                                  'lib/assets/add-circle-half-dot.png'),
+                                              width: 30,
+                                            ),
+                                          ),
+                                        ),
+                                        Container(
+                                          alignment: Alignment.bottomCenter,
+                                          width: customWidth * .2 + 23,
+                                          height: 24,
+                                          decoration: const ShapeDecoration(
+                                            color: Color(0xFFD9D9D9),
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.only(
+                                                bottomLeft:
+                                                    Radius.circular(8.63),
+                                                bottomRight:
+                                                    Radius.circular(8.63),
+                                              ),
+                                            ),
+                                          ),
+                                          child: const Center(
+                                            child: Text(
+                                              'Left Side',
+                                              style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 10,
+                                                fontFamily: 'Roboto',
+                                                fontWeight: FontWeight.w600,
+                                                height: 0.13,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
-                            Container(
-                              margin: const EdgeInsets.only(right: 8),
-                              child: DottedBorder(
-                                borderType: BorderType.RRect,
-                                radius: const Radius.circular(8.63),
-                                color: Colors.black,
-                                strokeWidth: 1,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    const Padding(
-                                      padding: EdgeInsets.all(20),
-                                      child: Center(
-                                        child: Image(
-                                          image: AssetImage(
-                                              'lib/assets/add-circle-half-dot.png'),
-                                          width: 30,
-                                        ),
-                                      ),
-                                    ),
-                                    Container(
-                                      alignment: Alignment.bottomCenter,
-                                      width: customWidth * .2 + 23,
-                                      height: 24,
-                                      decoration: const ShapeDecoration(
-                                        color: Color(0xFFD9D9D9),
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.only(
-                                            bottomLeft: Radius.circular(8.63),
-                                            bottomRight: Radius.circular(8.63),
-                                          ),
-                                        ),
-                                      ),
-                                      child: const Center(
-                                        child: Text(
-                                          'Back Side',
-                                          style: TextStyle(
-                                            color: Colors.black,
-                                            fontSize: 10,
-                                            fontFamily: 'Roboto',
-                                            fontWeight: FontWeight.w600,
-                                            height: 0.13,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
+                            const SizedBox(
+                              height: 10,
                             ),
-                            Container(
-                              margin: const EdgeInsets.only(right: 5),
-                              child: DottedBorder(
-                                borderType: BorderType.RRect,
-                                radius: const Radius.circular(8.63),
-                                color: Colors.black,
-                                strokeWidth: 1,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    const Padding(
-                                      padding: EdgeInsets.all(20),
-                                      child: Center(
-                                        child: Image(
-                                          image: AssetImage(
-                                              'lib/assets/add-circle-half-dot.png'),
-                                          width: 30,
-                                        ),
-                                      ),
-                                    ),
-                                    Container(
-                                      alignment: Alignment.bottomCenter,
-                                      width: customWidth * .2 + 23,
-                                      height: 24,
-                                      decoration: const ShapeDecoration(
-                                        color: Color(0xFFD9D9D9),
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.only(
-                                            bottomLeft: Radius.circular(8.63),
-                                            bottomRight: Radius.circular(8.63),
+                            Row(
+                              children: [
+                                Container(
+                                  margin: const EdgeInsets.only(right: 8),
+                                  child: DottedBorder(
+                                    borderType: BorderType.RRect,
+                                    radius: const Radius.circular(8.63),
+                                    color: Colors.black,
+                                    strokeWidth: 1,
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        const Padding(
+                                          padding: EdgeInsets.all(20),
+                                          child: Center(
+                                            child: Image(
+                                              image: AssetImage(
+                                                  'lib/assets/add-circle-half-dot.png'),
+                                              width: 30,
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                      child: const Center(
-                                        child: Text(
-                                          'Left Side',
-                                          style: TextStyle(
-                                            color: Colors.black,
-                                            fontSize: 10,
-                                            fontFamily: 'Roboto',
-                                            fontWeight: FontWeight.w600,
-                                            height: 0.13,
+                                        Container(
+                                          alignment: Alignment.bottomCenter,
+                                          width: customWidth * .2 + 23,
+                                          height: 24,
+                                          decoration: const ShapeDecoration(
+                                            color: Color(0xFFD9D9D9),
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.only(
+                                                bottomLeft:
+                                                    Radius.circular(8.63),
+                                                bottomRight:
+                                                    Radius.circular(8.63),
+                                              ),
+                                            ),
+                                          ),
+                                          child: const Center(
+                                            child: Text(
+                                              'Front Side',
+                                              style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 10,
+                                                fontFamily: 'Roboto',
+                                                fontWeight: FontWeight.w600,
+                                                height: 0.13,
+                                              ),
+                                            ),
                                           ),
                                         ),
-                                      ),
+                                      ],
                                     ),
-                                  ],
+                                  ),
                                 ),
-                              ),
+                                Container(
+                                  margin: const EdgeInsets.only(right: 8),
+                                  child: DottedBorder(
+                                    borderType: BorderType.RRect,
+                                    radius: const Radius.circular(8.63),
+                                    color: Colors.black,
+                                    strokeWidth: 1,
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        const Padding(
+                                          padding: EdgeInsets.all(20),
+                                          child: Center(
+                                            child: Image(
+                                              image: AssetImage(
+                                                  'lib/assets/add-circle-half-dot.png'),
+                                              width: 30,
+                                            ),
+                                          ),
+                                        ),
+                                        Container(
+                                          alignment: Alignment.bottomCenter,
+                                          width: customWidth * .2 + 23,
+                                          height: 24,
+                                          decoration: const ShapeDecoration(
+                                            color: Color(0xFFD9D9D9),
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.only(
+                                                bottomLeft:
+                                                    Radius.circular(8.63),
+                                                bottomRight:
+                                                    Radius.circular(8.63),
+                                              ),
+                                            ),
+                                          ),
+                                          child: const Center(
+                                            child: Text(
+                                              'Back Side',
+                                              style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 10,
+                                                fontFamily: 'Roboto',
+                                                fontWeight: FontWeight.w600,
+                                                height: 0.13,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  margin: const EdgeInsets.only(right: 5),
+                                  child: DottedBorder(
+                                    borderType: BorderType.RRect,
+                                    radius: const Radius.circular(8.63),
+                                    color: Colors.black,
+                                    strokeWidth: 1,
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        const Padding(
+                                          padding: EdgeInsets.all(20),
+                                          child: Center(
+                                            child: Image(
+                                              image: AssetImage(
+                                                  'lib/assets/add-circle-half-dot.png'),
+                                              width: 30,
+                                            ),
+                                          ),
+                                        ),
+                                        Container(
+                                          alignment: Alignment.bottomCenter,
+                                          width: customWidth * .2 + 23,
+                                          height: 24,
+                                          decoration: const ShapeDecoration(
+                                            color: Color(0xFFD9D9D9),
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.only(
+                                                bottomLeft:
+                                                    Radius.circular(8.63),
+                                                bottomRight:
+                                                    Radius.circular(8.63),
+                                              ),
+                                            ),
+                                          ),
+                                          child: const Center(
+                                            child: Text(
+                                              'Left Side',
+                                              style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 10,
+                                                fontFamily: 'Roboto',
+                                                fontWeight: FontWeight.w600,
+                                                height: 0.13,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 18,
                             ),
                           ],
-                        ),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        Row(
-                          children: [
-                            Container(
-                              margin: const EdgeInsets.only(right: 8),
-                              child: DottedBorder(
-                                borderType: BorderType.RRect,
-                                radius: const Radius.circular(8.63),
-                                color: Colors.black,
-                                strokeWidth: 1,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    const Padding(
-                                      padding: EdgeInsets.all(20),
-                                      child: Center(
-                                        child: Image(
-                                          image: AssetImage(
-                                              'lib/assets/add-circle-half-dot.png'),
-                                          width: 30,
-                                        ),
-                                      ),
-                                    ),
-                                    Container(
-                                      alignment: Alignment.bottomCenter,
-                                      width: customWidth * .2 + 23,
-                                      height: 24,
-                                      decoration: const ShapeDecoration(
-                                        color: Color(0xFFD9D9D9),
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.only(
-                                            bottomLeft: Radius.circular(8.63),
-                                            bottomRight: Radius.circular(8.63),
-                                          ),
-                                        ),
-                                      ),
-                                      child: const Center(
-                                        child: Text(
-                                          'Right Side',
-                                          style: TextStyle(
-                                            color: Colors.black,
-                                            fontSize: 10,
-                                            fontFamily: 'Roboto',
-                                            fontWeight: FontWeight.w600,
-                                            height: 0.13,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            Container(
-                              margin: const EdgeInsets.only(right: 8),
-                              child: DottedBorder(
-                                borderType: BorderType.RRect,
-                                radius: const Radius.circular(8.63),
-                                color: Colors.black,
-                                strokeWidth: 1,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    const Padding(
-                                      padding: EdgeInsets.all(20),
-                                      child: Center(
-                                        child: Image(
-                                          image: AssetImage(
-                                              'lib/assets/add-circle-half-dot.png'),
-                                          width: 30,
-                                        ),
-                                      ),
-                                    ),
-                                    Container(
-                                      alignment: Alignment.bottomCenter,
-                                      width: customWidth * .5 + 18,
-                                      height: 24,
-                                      decoration: const ShapeDecoration(
-                                        color: Color(0xFFD9D9D9),
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.only(
-                                            bottomLeft: Radius.circular(8.63),
-                                            bottomRight: Radius.circular(8.63),
-                                          ),
-                                        ),
-                                      ),
-                                      child: const Center(
-                                        child: Text(
-                                          'With person and Accessories',
-                                          style: TextStyle(
-                                            color: Colors.black,
-                                            fontSize: 10,
-                                            fontFamily: 'Roboto',
-                                            fontWeight: FontWeight.w600,
-                                            height: 0.13,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(
-                          height: 10,
-                        ),
+                        )
                       ],
                     ),
                   ),

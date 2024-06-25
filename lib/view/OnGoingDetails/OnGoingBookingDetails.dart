@@ -36,7 +36,7 @@ class _CustomerDetailsState extends State<OnGoingBookingDetails>
                 ),
               ),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Column(
                     children: [
@@ -307,6 +307,12 @@ class _CustomerDetailsState extends State<OnGoingBookingDetails>
                       // Driving license and ID proof
                     ],
                   ),
+                  const SizedBox(
+                    height: 18,
+                  ),
+//Vehicle Pictute before trip
+                  const DropdownContainer(),
+
                   Container(
                     padding: EdgeInsets.only(
                         left: customWidth * .1 - 25,
@@ -641,7 +647,7 @@ class _CustomerDetailsState extends State<OnGoingBookingDetails>
                           ],
                         ),
                         const SizedBox(
-                          height: 12,
+                          height: 18,
                         ),
                         Row(
                           children: [
@@ -697,7 +703,79 @@ class _CustomerDetailsState extends State<OnGoingBookingDetails>
                           ],
                         ),
                         const SizedBox(
-                          height: 10,
+                          height: 18,
+                        ),
+                        const Text(
+                          'Extra KM Charges',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 13,
+                            fontFamily: 'Roboto',
+                            fontWeight: FontWeight.w600,
+                            height: 0.09,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 15,
+                        ),
+                        Row(
+                          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              width: 142,
+                              height: 36,
+                              decoration: ShapeDecoration(
+                                shape: RoundedRectangleBorder(
+                                  side: const BorderSide(
+                                      width: 1, color: Color(0xFFD9D9D9)),
+                                  borderRadius: BorderRadius.circular(6),
+                                ),
+                              ),
+                              child: const Center(
+                                child: Text(
+                                  '₹ 657',
+                                  style: TextStyle(
+                                    color: Color(0xFF6E6E6E),
+                                    fontSize: 10.78,
+                                    fontFamily: 'Roboto',
+                                    fontWeight: FontWeight.w400,
+                                    height: 0,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 35,
+                            ),
+                            ElevatedButton(
+                              onPressed: () {
+                                // Define the action to be taken when the button is pressed
+                              },
+                              style: ElevatedButton.styleFrom(
+                                side: const BorderSide(
+                                    width: 1, color: Color(0xFFFF7134)),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(8.95),
+                                ),
+                                minimumSize:
+                                    const Size(140, 36), // Size of the button
+                                elevation: 0, // Remove elevation if not needed
+                              ),
+                              child: const Text(
+                                'Request Payment',
+                                style: TextStyle(
+                                  color: Color(0xFFFF7134),
+                                  fontSize: 13.09,
+                                  fontFamily: 'Roboto',
+                                  fontWeight: FontWeight.w700,
+                                  height: 1.2, // Adjust height if needed
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 50,
                         ),
                       ],
                     ),
@@ -751,5 +829,391 @@ class _CustomerDetailsState extends State<OnGoingBookingDetails>
             ))
       ],
     ));
+  }
+}
+
+// DropDownContainer
+
+class DropdownContainer extends StatefulWidget {
+  const DropdownContainer({super.key});
+
+  @override
+  _DropdownContainerState createState() => _DropdownContainerState();
+}
+
+class _DropdownContainerState extends State<DropdownContainer> {
+  bool _isExpanded = false;
+
+  @override
+  Widget build(BuildContext context) {
+    final double customWidth = MediaQuery.of(context).size.width;
+    return Column(
+      children: [
+        SizedBox(
+          width: MediaQuery.of(context).size.width * 0.9 - 5,
+          height: 45.26,
+          child: ElevatedButton(
+            onPressed: () {
+              setState(() {
+                _isExpanded = !_isExpanded;
+              });
+            },
+            style: ElevatedButton.styleFrom(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.14),
+              ),
+              elevation: 1, // Elevation for 3D effect
+              // shadowColor: Colors.grey,
+            ),
+            child: const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Vehicle Pictures before trip',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 12.56,
+                    fontFamily: 'Roboto',
+                    fontWeight: FontWeight.w500,
+                    height: 0,
+                  ),
+                ),
+                Image(
+                  image: AssetImage('lib/assets/Vector.png'),
+                  width: 25,
+                )
+              ],
+            ),
+          ),
+        ),
+        AnimatedContainer(
+          padding: const EdgeInsets.fromLTRB(14, 10, 10, 10),
+          duration: const Duration(seconds: 1),
+          curve: Curves.easeInExpo,
+          height: _isExpanded ? 250.0 : 0.0,
+          color: Colors.white,
+          child: _isExpanded
+              ? Column(
+                  children: [
+                    Row(
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.only(right: 8),
+                          child: DottedBorder(
+                            borderType: BorderType.RRect,
+                            radius: const Radius.circular(8.63),
+                            color: Colors.black,
+                            strokeWidth: 1,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                const Padding(
+                                  padding: EdgeInsets.all(20),
+                                  child: Center(
+                                    child: Image(
+                                      image: AssetImage(
+                                          'lib/assets/add-circle-half-dot.png'),
+                                      width: 30,
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  alignment: Alignment.bottomCenter,
+                                  width: customWidth * .2 + 23,
+                                  height: 24,
+                                  decoration: const ShapeDecoration(
+                                    color: Color(0xFFD9D9D9),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.only(
+                                        bottomLeft: Radius.circular(8.63),
+                                        bottomRight: Radius.circular(8.63),
+                                      ),
+                                    ),
+                                  ),
+                                  child: const Center(
+                                    child: Text(
+                                      'Front Side',
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 10,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w600,
+                                        height: 0.13,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Container(
+                          margin: const EdgeInsets.only(right: 8),
+                          child: DottedBorder(
+                            borderType: BorderType.RRect,
+                            radius: const Radius.circular(8.63),
+                            color: Colors.black,
+                            strokeWidth: 1,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                const Padding(
+                                  padding: EdgeInsets.all(20),
+                                  child: Center(
+                                    child: Image(
+                                      image: AssetImage(
+                                          'lib/assets/add-circle-half-dot.png'),
+                                      width: 30,
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  alignment: Alignment.bottomCenter,
+                                  width: customWidth * .2 + 23,
+                                  height: 24,
+                                  decoration: const ShapeDecoration(
+                                    color: Color(0xFFD9D9D9),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.only(
+                                        bottomLeft: Radius.circular(8.63),
+                                        bottomRight: Radius.circular(8.63),
+                                      ),
+                                    ),
+                                  ),
+                                  child: const Center(
+                                    child: Text(
+                                      'Back Side',
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 10,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w600,
+                                        height: 0.13,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Container(
+                          margin: const EdgeInsets.only(right: 5),
+                          child: DottedBorder(
+                            borderType: BorderType.RRect,
+                            radius: const Radius.circular(8.63),
+                            color: Colors.black,
+                            strokeWidth: 1,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                const Padding(
+                                  padding: EdgeInsets.all(20),
+                                  child: Center(
+                                    child: Image(
+                                      image: AssetImage(
+                                          'lib/assets/add-circle-half-dot.png'),
+                                      width: 30,
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  alignment: Alignment.bottomCenter,
+                                  width: customWidth * .2 + 23,
+                                  height: 24,
+                                  decoration: const ShapeDecoration(
+                                    color: Color(0xFFD9D9D9),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.only(
+                                        bottomLeft: Radius.circular(8.63),
+                                        bottomRight: Radius.circular(8.63),
+                                      ),
+                                    ),
+                                  ),
+                                  child: const Center(
+                                    child: Text(
+                                      'Left Side',
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 10,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w600,
+                                        height: 0.13,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.only(right: 8),
+                          child: DottedBorder(
+                            borderType: BorderType.RRect,
+                            radius: const Radius.circular(8.63),
+                            color: Colors.black,
+                            strokeWidth: 1,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                const Padding(
+                                  padding: EdgeInsets.all(20),
+                                  child: Center(
+                                    child: Image(
+                                      image: AssetImage(
+                                          'lib/assets/add-circle-half-dot.png'),
+                                      width: 30,
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  alignment: Alignment.bottomCenter,
+                                  width: customWidth * .2 + 23,
+                                  height: 24,
+                                  decoration: const ShapeDecoration(
+                                    color: Color(0xFFD9D9D9),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.only(
+                                        bottomLeft: Radius.circular(8.63),
+                                        bottomRight: Radius.circular(8.63),
+                                      ),
+                                    ),
+                                  ),
+                                  child: const Center(
+                                    child: Text(
+                                      'Front Side',
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 10,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w600,
+                                        height: 0.13,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Container(
+                          margin: const EdgeInsets.only(right: 8),
+                          child: DottedBorder(
+                            borderType: BorderType.RRect,
+                            radius: const Radius.circular(8.63),
+                            color: Colors.black,
+                            strokeWidth: 1,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                const Padding(
+                                  padding: EdgeInsets.all(20),
+                                  child: Center(
+                                    child: Image(
+                                      image: AssetImage(
+                                          'lib/assets/add-circle-half-dot.png'),
+                                      width: 30,
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  alignment: Alignment.bottomCenter,
+                                  width: customWidth * .2 + 23,
+                                  height: 24,
+                                  decoration: const ShapeDecoration(
+                                    color: Color(0xFFD9D9D9),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.only(
+                                        bottomLeft: Radius.circular(8.63),
+                                        bottomRight: Radius.circular(8.63),
+                                      ),
+                                    ),
+                                  ),
+                                  child: const Center(
+                                    child: Text(
+                                      'Back Side',
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 10,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w600,
+                                        height: 0.13,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Container(
+                          margin: const EdgeInsets.only(right: 5),
+                          child: DottedBorder(
+                            borderType: BorderType.RRect,
+                            radius: const Radius.circular(8.63),
+                            color: Colors.black,
+                            strokeWidth: 1,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                const Padding(
+                                  padding: EdgeInsets.all(20),
+                                  child: Center(
+                                    child: Image(
+                                      image: AssetImage(
+                                          'lib/assets/add-circle-half-dot.png'),
+                                      width: 30,
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  alignment: Alignment.bottomCenter,
+                                  width: customWidth * .2 + 23,
+                                  height: 24,
+                                  decoration: const ShapeDecoration(
+                                    color: Color(0xFFD9D9D9),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.only(
+                                        bottomLeft: Radius.circular(8.63),
+                                        bottomRight: Radius.circular(8.63),
+                                      ),
+                                    ),
+                                  ),
+                                  child: const Center(
+                                    child: Text(
+                                      'Left Side',
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 10,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w600,
+                                        height: 0.13,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 18,
+                    ),
+                  ],
+                )
+              : null,
+        ),
+      ],
+    );
   }
 }

@@ -64,12 +64,12 @@ class _UpcomingpageState extends State<BikersAvailablePage> {
                                 )
                               ],
                             ),
-                            child: const Padding(
-                              padding: EdgeInsets.fromLTRB(8, 0, 8, 0),
+                            child: Padding(
+                              padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
                               child: Column(
                                 children: [
-                                  SizedBox(height: 15),
-                                  Row(
+                                  const SizedBox(height: 15),
+                                  const Row(
                                     children: [
                                       Image(
                                         image: AssetImage(
@@ -104,12 +104,12 @@ class _UpcomingpageState extends State<BikersAvailablePage> {
                                       ),
                                     ],
                                   ),
-                                  SizedBox(height: 15),
+                                  const SizedBox(height: 15),
                                   Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Text(
+                                      const Text(
                                         'KL 56D 5678',
                                         style: TextStyle(
                                           color: Colors.black,
@@ -118,23 +118,31 @@ class _UpcomingpageState extends State<BikersAvailablePage> {
                                           fontWeight: FontWeight.w500,
                                         ),
                                       ),
-                                      Padding(
-                                        padding: EdgeInsets.all(8),
-                                        child: Center(
+                                      Container(
+                                        width: 145,
+                                        height: 28,
+                                        decoration: ShapeDecoration(
+                                          color: const Color(0xFFF2F2F2),
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(45.33),
+                                          ),
+                                        ),
+                                        child: const Center(
                                           child: Text(
                                             'Serviced Date : 12 Jun 2024',
                                             style: TextStyle(
                                               color: Color(0xFF418BFF),
-                                              fontSize: 9.71,
+                                              fontSize: 10,
                                               fontFamily: 'Roboto',
                                               fontWeight: FontWeight.w400,
                                             ),
                                           ),
                                         ),
-                                      ),
+                                      )
                                     ],
                                   ),
-                                  SizedBox(height: 15),
+                                  const SizedBox(height: 15),
                                 ],
                               ),
                             ),

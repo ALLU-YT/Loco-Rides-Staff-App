@@ -854,6 +854,19 @@ class _CounterBottomSheetState extends State<CounterBottomSheet> {
                               image: AssetImage('lib/assets/XMLID_2913_.png'),
                               width: 20,
                             ),
+                            Padding(
+                              padding: EdgeInsets.only(right: 10),
+                              child: Text(
+                                '₹0',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 12.68,
+                                  fontFamily: 'Roboto',
+                                  fontWeight: FontWeight.w400,
+                                  height: 0,
+                                ),
+                              ),
+                            ),
                           ],
                         ),
                         const SizedBox(height: 5),
@@ -868,42 +881,24 @@ class _CounterBottomSheetState extends State<CounterBottomSheet> {
                           ),
                         ),
                         const SizedBox(height: 5),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const Text(
-                              '₹0',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 12.68,
-                                fontFamily: 'Roboto',
-                                fontWeight: FontWeight.w400,
-                                height: 0,
+                        Container(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              IconButton(
+                                onPressed: incrementCounter,
+                                icon: const Icon(Icons.add),
                               ),
-                            ),
-                            const SizedBox(
-                              width: 10,
-                            ),
-                            Container(
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  IconButton(
-                                    onPressed: incrementCounter,
-                                    icon: const Icon(Icons.add),
-                                  ),
-                                  Text(
-                                    '$counter',
-                                    style: const TextStyle(fontSize: 20),
-                                  ),
-                                  IconButton(
-                                    onPressed: decrementCounter,
-                                    icon: const Icon(Icons.remove),
-                                  ),
-                                ],
+                              Text(
+                                '$counter',
+                                style: const TextStyle(fontSize: 20),
                               ),
-                            ),
-                          ],
+                              IconButton(
+                                onPressed: decrementCounter,
+                                icon: const Icon(Icons.remove),
+                              ),
+                            ],
+                          ),
                         )
                       ],
                     ),
