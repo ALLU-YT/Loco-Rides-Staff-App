@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:loco_rides_staff_app/controler/CustomerDetailsNextButtonProvider.dart';
 import 'package:loco_rides_staff_app/view/mainBookingPage.dart';
-import 'package:loco_rides_staff_app/view/upComingDetailsPages/upComingBookingDetails.dart';
-import 'package:loco_rides_staff_app/view/upComingDetailsPages/upComingTransaction.dart';
+import 'package:loco_rides_staff_app/view/upComingDetailsPages/UpComingBookingDetails.dart';
+import 'package:loco_rides_staff_app/view/upComingDetailsPages/upComingTransationPage.dart';
+import 'package:loco_rides_staff_app/view/upComingDetailsPages/upComingVehicle.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 
@@ -137,9 +138,9 @@ class _MainUpcomingDetailsPageState extends State<MainUpcomingDetailsPage>
                   children: const <Widget>[
                     Center(child: CustomerDetails()),
                     Center(child: UpComingBookingDetails()),
-                    Center(child: UpComingTransation()),
+                    Center(child: Upcomingtransationpage()),
                     Center(
-                      child: Text("Upcoming"),
+                      child: Upcomingvehicle(),
                     ),
                   ],
                 );

@@ -84,6 +84,7 @@ flutter:
     - lib\assets\XMLID_2913_.png
     - lib\assets\pdf 1.png
     - lib\assets\Group.png
+    - lib\assets\motorcycle-safety-helmet-removebg-preview.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
