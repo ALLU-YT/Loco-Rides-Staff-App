@@ -314,6 +314,28 @@ class Upcomingtransationpage extends StatelessWidget {
           content: Row(
             children: [
               Container(
+                width: 130,
+                height: 36,
+                decoration: ShapeDecoration(
+                  shape: RoundedRectangleBorder(
+                    side: const BorderSide(width: 1, color: Color(0xFFD9D9D9)),
+                    borderRadius: BorderRadius.circular(6),
+                  ),
+                ),
+                child: const Center(
+                  child: Text(
+                    '₹ 657',
+                    style: TextStyle(
+                      color: Color(0xFF6E6E6E),
+                      fontSize: 10.78,
+                      fontFamily: 'Roboto',
+                      fontWeight: FontWeight.w400,
+                      height: 0,
+                    ),
+                  ),
+                ),
+              ),
+              Container(
                 width: 142,
                 height: 36,
                 decoration: ShapeDecoration(
@@ -322,13 +344,28 @@ class Upcomingtransationpage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(6),
                   ),
                 ),
-              )
+                child: DropdownButton<String>(
+                  isExpanded: true,
+                  value: 'Online Payment', // Default value
+                  onChanged: (String? newValue) {
+                    // Handle the change
+                  },
+                  items: <String>['Online Payment', 'Cash']
+                      .map<DropdownMenuItem<String>>((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                        child: Text(value,
+                            style: const TextStyle(fontSize: 10.78)),
+                      ),
+                    );
+                  }).toList(),
+                ),
+              ),
             ],
           ),
           actions: <Widget>[
-            const Column(
-              children: [Text("g")],
-            ),
             TextButton(
               child: const Text('Close'),
               onPressed: () {
