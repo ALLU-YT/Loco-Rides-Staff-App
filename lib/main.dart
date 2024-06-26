@@ -10,6 +10,9 @@ void main() {
         ChangeNotifierProvider(
           create: (_) => TabProvider(),
         ),
+        ChangeNotifierProvider(
+          create: (_) => TabProvider_2(),
+        ),
       ],
       child: const MyApp(),
     ),

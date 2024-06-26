@@ -15,7 +15,7 @@ class _CustomerDetailsState extends State<OnGoingCustomerDetails>
   @override
   Widget build(BuildContext context) {
     final double customWidth = MediaQuery.of(context).size.width;
-    final tabProvider = Provider.of<TabProvider>(context, listen: false);
+    final tabProvider = Provider.of<TabProvider_2>(context, listen: false);
     return Scaffold(
         body: Stack(
       children: [

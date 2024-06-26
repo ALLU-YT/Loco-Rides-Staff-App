@@ -21,7 +21,7 @@ class _MainUpcomingDetailsPageState extends State<MainOnGoingPage>
   @override
   void initState() {
     super.initState();
-    Provider.of<TabProvider>(context, listen: false).setTabController(this);
+    Provider.of<TabProvider_2>(context, listen: false).setTabController(this);
   }
 
   // Method to create a tab with given text
@@ -113,7 +113,7 @@ class _MainUpcomingDetailsPageState extends State<MainOnGoingPage>
           const SizedBox(
             height: 10,
           ),
-          Consumer<TabProvider>(
+          Consumer<TabProvider_2>(
             builder: (context, tabProvider, _) {
               return TabBar(
                 controller: tabProvider.tabController,
@@ -130,7 +130,7 @@ class _MainUpcomingDetailsPageState extends State<MainOnGoingPage>
             },
           ),
           Expanded(
-            child: Consumer<TabProvider>(
+            child: Consumer<TabProvider_2>(
               builder: (context, tabProvider, _) {
                 return TabBarView(
                   controller: tabProvider.tabController,

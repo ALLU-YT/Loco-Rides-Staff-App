@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:loco_rides_staff_app/view/dashBoardPage.dart';
-import 'package:loco_rides_staff_app/view/inventory/bikesAvailablePage.dart';
+import 'package:loco_rides_staff_app/view/inventory/InventroryBikeOngoing.dart';
+import 'package:loco_rides_staff_app/view/inventory/inventoryBikeAvailablepage.dart';
+import 'package:loco_rides_staff_app/view/inventory/invetroyUnavailable.dart';
 import 'package:page_transition/page_transition.dart';
 
 class BikesMainPage extends StatelessWidget {
@@ -101,13 +103,13 @@ class BikesMainPage extends StatelessWidget {
               child: TabBarView(
                 children: <Widget>[
                   Center(
-                    child: BikersAvailablePage(),
+                    child: Inventorybikeavailablepage(),
                   ),
                   Center(
-                    child: Text("It's rainy here"),
+                    child: Inventrorybikeongoing(),
                   ),
                   Center(
-                    child: Text("It's sunny here"),
+                    child: Invetroyunavailable(),
                   ),
                   Center(
                     child: Text("It's windy here"),

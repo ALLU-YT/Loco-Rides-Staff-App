@@ -4,14 +4,14 @@ import 'package:loco_rides_staff_app/view/inventory/bikeMenus/RepairDetails.dart
 import 'package:loco_rides_staff_app/view/inventory/bikeMenus/VechicleDetails.dart';
 import 'package:page_transition/page_transition.dart';
 
-class BikersAvailablePage extends StatefulWidget {
-  const BikersAvailablePage({super.key});
+class Inventorybikeavailablepage extends StatefulWidget {
+  const Inventorybikeavailablepage({super.key});
 
   @override
-  State<BikersAvailablePage> createState() => _UpcomingpageState();
+  State<Inventorybikeavailablepage> createState() => _UpcomingpageState();
 }
 
-class _UpcomingpageState extends State<BikersAvailablePage> {
+class _UpcomingpageState extends State<Inventorybikeavailablepage> {
   List<bool> dropdownVisibleList = List.generate(6, (index) => false);
   int currentOpenIndex = -1;
 
