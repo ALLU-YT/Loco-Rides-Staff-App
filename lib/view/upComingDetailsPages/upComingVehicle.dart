@@ -2,6 +2,7 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:loco_rides_staff_app/controler/CustomerDetailsNextButtonProvider.dart';
 import 'package:provider/provider.dart';
+import 'package:slidable_button/slidable_button.dart';
 
 class Upcomingvehicle extends StatefulWidget {
   const Upcomingvehicle({super.key});
@@ -682,39 +683,51 @@ class _CustomerDetailsState extends State<Upcomingvehicle>
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Container(
-                  width: customWidth * .9,
-                  decoration: BoxDecoration(
-                    gradient: const LinearGradient(
-                      colors: [Color(0xFFFF7134), Color(0xFFFF4D00)],
-                    ),
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.transparent,
-                      shadowColor: Colors.transparent,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                    ),
-                    onPressed: () {
-                      tabProvider.tabController
-                          .animateTo((tabProvider.selectedIndex + 1) % 4);
-                    },
-                    child: const Text(
-                      'Next',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 13.09,
-                        fontFamily: 'Roboto',
-                        fontWeight: FontWeight.w700,
-                        height:
-                            1.0, // Typically 1.0 or higher for better readability
+                HorizontalSlidableButton(
+                  width: MediaQuery.of(context).size.width * 0.9,
+                  height: 60,
+                  buttonWidth: 60,
+                  color: Colors.orange,
+                  dismissible: true,
+                  label: const Center(
+                      child:
+                          Image(image: AssetImage('lib/assets/Frame 2.png'))),
+                  child: const Padding(
+                    padding: EdgeInsets.all(10),
+                    child: Center(
+                      child: Text(
+                        'Slide',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 14.76,
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.w500,
+                          height: 1.0,
+                        ),
                       ),
                     ),
                   ),
-                )
+                  onChanged: (position) {
+                    setState(() {
+                      if (position == SlidableButtonPosition.end) {
+                        // Update buttonLabel, appContent, appImage if necessary
+                        // buttonLabel = 'Slide Right';
+                        // appContent = 'Slide to check Out';
+                        // appImage = Image.asset(
+                        //   'assets/Mask group (1).png',
+                        //   width: 100,
+                        // );
+
+                        // buttonLabel = 'Slide Right';
+                        // appContent = 'Slide to check Out';
+                        // appImage = Image.asset(
+                        //   'assets/Mask group (1).png',
+                        //   width: 100,
+                        // );
+                      }
+                    });
+                  },
+                ),
               ],
             ))
       ],

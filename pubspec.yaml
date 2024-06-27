@@ -40,6 +40,7 @@ dependencies:
   provider: ^6.1.2
   slider_button: ^2.1.0
   slidable_button: ^3.0.0+1
+  qr_flutter: ^4.1.0
 
 dev_dependencies:
   flutter_test:
@@ -85,6 +86,7 @@ flutter:
     - lib\assets\pdf 1.png
     - lib\assets\Group.png
     - lib\assets\motorcycle-safety-helmet-removebg-preview.png
+    - lib\assets\QR_code_for_mobile_English_Wikipedia.svg.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
