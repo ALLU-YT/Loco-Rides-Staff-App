@@ -242,86 +242,6 @@ class _CustomerDetailsState extends State<UpComingBookingDetails>
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Row(
-                            children: [
-                              SizedBox(
-                                width: 5,
-                              ),
-                              Text(
-                                'Addons',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 15,
-                                  fontFamily: 'Roboto',
-                                  fontWeight: FontWeight.w600,
-                                  height: 0.09,
-                                ),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          Center(
-                            child: GestureDetector(
-                              onTap: () {
-                                showModalBottomSheet(
-                                  showDragHandle: false,
-                                  context: context,
-                                  builder: (BuildContext context) {
-                                    return const CounterBottomSheet();
-                                  },
-                                );
-                              },
-                              child: Container(
-                                width: 312,
-                                height: 45.26,
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(10.14),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.black
-                                          .withOpacity(0.15), // Shadow color
-                                      offset: const Offset(0,
-                                          4), // Horizontal and vertical offset
-                                      blurRadius: 10, // Blur radius
-                                      spreadRadius: 1, // Spread radius
-                                    ),
-                                  ],
-                                ),
-                                child: Container(
-                                  padding: const EdgeInsets.all(10),
-                                  child: const Center(
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text(
-                                          'Add accessories',
-                                          style: TextStyle(
-                                            color: Colors.black,
-                                            fontSize: 14.56,
-                                            fontFamily: 'Roboto',
-                                            fontWeight: FontWeight.w500,
-                                            height: 0,
-                                          ),
-                                        ),
-                                        Image(
-                                          image: AssetImage(
-                                              'lib/assets/Vector.png'),
-                                          width: 15,
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 20,
-                          ),
                           const Text(
                             'Addons List',
                             style: TextStyle(
@@ -389,18 +309,14 @@ class _CustomerDetailsState extends State<UpComingBookingDetails>
                                                 mainAxisAlignment:
                                                     MainAxisAlignment.start,
                                                 children: [
-                                                  Icon(
-                                                    Icons.location_on_outlined,
-                                                    size: 11,
-                                                  ),
                                                   Text(
-                                                    'Varkala',
+                                                    'Price ₹500',
                                                     style: TextStyle(
-                                                      color: Color(0xFF6E6E6E),
-                                                      fontSize: 11,
+                                                      color: Colors.black,
+                                                      fontSize: 12,
                                                       fontFamily: 'Roboto',
                                                       fontWeight:
-                                                          FontWeight.w400,
+                                                          FontWeight.w500,
                                                       height: 0,
                                                     ),
                                                   ),
@@ -413,7 +329,7 @@ class _CustomerDetailsState extends State<UpComingBookingDetails>
                                                 'Deposit Amount ₹ 250',
                                                 style: TextStyle(
                                                   color: Colors.black,
-                                                  fontSize: 13,
+                                                  fontSize: 12,
                                                   fontFamily: 'Roboto',
                                                   fontWeight: FontWeight.w500,
                                                   height: 0,
