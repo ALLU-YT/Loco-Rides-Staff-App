@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loco_rides_staff_app/controler/CustomerDetailsNextButtonProvider.dart';
 import 'package:loco_rides_staff_app/view/OnGoingDetails/OnGoingBookingDetails.dart';
+import 'package:loco_rides_staff_app/view/OnGoingDetails/onGoingSummeryPage.dart';
 import 'package:loco_rides_staff_app/view/OnGoingDetails/onGoingTransactionPage.dart';
 import 'package:loco_rides_staff_app/view/mainBookingPage.dart';
 import 'package:page_transition/page_transition.dart';
@@ -123,8 +124,8 @@ class _MainUpcomingDetailsPageState extends State<MainOnGoingPage>
                 tabs: <Widget>[
                   _buildTab('Customer details'),
                   _buildTab('Booking details'),
+                  _buildTab('Summery'),
                   _buildTab('Transaction'),
-                  _buildTab('Upcoming'),
                 ],
               );
             },
@@ -137,9 +138,9 @@ class _MainUpcomingDetailsPageState extends State<MainOnGoingPage>
                   children: const <Widget>[
                     Center(child: OnGoingCustomerDetails()),
                     Center(child: OnGoingBookingDetails()),
-                    Center(child: OnGoingTransationPage()),
+                    Center(child: Ongoingsummerypage()),
                     Center(
-                      child: Text("Upcoming"),
+                      child: OnGoingTransationPage(),
                     ),
                   ],
                 );

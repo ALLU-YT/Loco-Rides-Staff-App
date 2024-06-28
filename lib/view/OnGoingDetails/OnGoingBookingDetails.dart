@@ -705,75 +705,75 @@ class _CustomerDetailsState extends State<OnGoingBookingDetails>
                         const SizedBox(
                           height: 18,
                         ),
-                        const Text(
-                          'Extra KM Charges',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 13,
-                            fontFamily: 'Roboto',
-                            fontWeight: FontWeight.w600,
-                            height: 0.09,
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 15,
-                        ),
-                        Row(
-                          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Container(
-                              width: 142,
-                              height: 36,
-                              decoration: ShapeDecoration(
-                                shape: RoundedRectangleBorder(
-                                  side: const BorderSide(
-                                      width: 1, color: Color(0xFFD9D9D9)),
-                                  borderRadius: BorderRadius.circular(6),
-                                ),
-                              ),
-                              child: const Center(
-                                child: Text(
-                                  '₹ 657',
-                                  style: TextStyle(
-                                    color: Color(0xFF6E6E6E),
-                                    fontSize: 10.78,
-                                    fontFamily: 'Roboto',
-                                    fontWeight: FontWeight.w400,
-                                    height: 0,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            const SizedBox(
-                              width: 35,
-                            ),
-                            ElevatedButton(
-                              onPressed: () {
-                                // Define the action to be taken when the button is pressed
-                              },
-                              style: ElevatedButton.styleFrom(
-                                side: const BorderSide(
-                                    width: 1, color: Color(0xFFFF7134)),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8.95),
-                                ),
-                                minimumSize:
-                                    const Size(140, 36), // Size of the button
-                                elevation: 0, // Remove elevation if not needed
-                              ),
-                              child: const Text(
-                                'Request Payment',
-                                style: TextStyle(
-                                  color: Color(0xFFFF7134),
-                                  fontSize: 13.09,
-                                  fontFamily: 'Roboto',
-                                  fontWeight: FontWeight.w700,
-                                  height: 1.2, // Adjust height if needed
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
+                        // const Text(
+                        //   'Extra KM Charges',
+                        //   style: TextStyle(
+                        //     color: Colors.black,
+                        //     fontSize: 13,
+                        //     fontFamily: 'Roboto',
+                        //     fontWeight: FontWeight.w600,
+                        //     height: 0.09,
+                        //   ),
+                        // ),
+                        // const SizedBox(
+                        //   height: 15,
+                        // ),
+                        // Row(
+                        //   // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        //   children: [
+                        //     Container(
+                        //       width: 142,
+                        //       height: 36,
+                        //       decoration: ShapeDecoration(
+                        //         shape: RoundedRectangleBorder(
+                        //           side: const BorderSide(
+                        //               width: 1, color: Color(0xFFD9D9D9)),
+                        //           borderRadius: BorderRadius.circular(6),
+                        //         ),
+                        //       ),
+                        //       child: const Center(
+                        //         child: Text(
+                        //           '₹ 657',
+                        //           style: TextStyle(
+                        //             color: Color(0xFF6E6E6E),
+                        //             fontSize: 10.78,
+                        //             fontFamily: 'Roboto',
+                        //             fontWeight: FontWeight.w400,
+                        //             height: 0,
+                        //           ),
+                        //         ),
+                        //       ),
+                        //     ),
+                        //     const SizedBox(
+                        //       width: 35,
+                        //     ),
+                        //     ElevatedButton(
+                        //       onPressed: () {
+                        //         // Define the action to be taken when the button is pressed
+                        //       },
+                        //       style: ElevatedButton.styleFrom(
+                        //         side: const BorderSide(
+                        //             width: 1, color: Color(0xFFFF7134)),
+                        //         shape: RoundedRectangleBorder(
+                        //           borderRadius: BorderRadius.circular(8.95),
+                        //         ),
+                        //         minimumSize:
+                        //             const Size(140, 36), // Size of the button
+                        //         elevation: 0, // Remove elevation if not needed
+                        //       ),
+                        //       child: const Text(
+                        //         'Request Payment',
+                        //         style: TextStyle(
+                        //           color: Color(0xFFFF7134),
+                        //           fontSize: 13.09,
+                        //           fontFamily: 'Roboto',
+                        //           fontWeight: FontWeight.w700,
+                        //           height: 1.2, // Adjust height if needed
+                        //         ),
+                        //       ),
+                        //     )
+                        //   ],
+                        // ),
                         const SizedBox(
                           height: 50,
                         ),
@@ -889,7 +889,7 @@ class _DropdownContainerState extends State<DropdownContainer> {
         AnimatedContainer(
           padding: const EdgeInsets.fromLTRB(14, 10, 10, 10),
           duration: const Duration(seconds: 1),
-          curve: Curves.easeInExpo,
+          curve: Curves.ease,
           height: _isExpanded ? 250.0 : 0.0,
           color: Colors.white,
           child: _isExpanded

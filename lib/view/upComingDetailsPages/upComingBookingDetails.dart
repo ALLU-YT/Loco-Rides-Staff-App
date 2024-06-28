@@ -346,7 +346,42 @@ class _CustomerDetailsState extends State<UpComingBookingDetails>
                                       ),
                                     ],
                                   ),
-                                ))
+                                )),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          ElevatedButton(
+                            onPressed: () {
+                              showBottomSheet(
+                                context: context,
+                                builder: (context) {
+                                  return const CounterBottomSheet();
+                                },
+                              );
+                            },
+                            child: const Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'Add accessories',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 12.56,
+                                    fontFamily: 'Roboto',
+                                    fontWeight: FontWeight.w500,
+                                    height: 0,
+                                  ),
+                                ),
+                                Image(
+                                  image: AssetImage('lib/assets/Vector.png'),
+                                  width: 20,
+                                )
+                              ],
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 50,
+                          ),
                         ],
                       ),
                     ),
