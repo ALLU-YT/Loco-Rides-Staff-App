@@ -446,7 +446,7 @@ class Upcomingtransationpage extends StatelessWidget {
                                   hintText: '₹ 657',
                                   hintStyle: const TextStyle(
                                     color: Color.fromARGB(255, 0, 0, 0),
-                                    fontSize: 10.78,
+                                    fontSize: 14.78,
                                     fontFamily: 'Roboto',
                                     fontWeight: FontWeight.w500,
                                   ),
@@ -496,7 +496,7 @@ class Upcomingtransationpage extends StatelessWidget {
                                   _showPopup(context);
                                 },
                                 child: const Text(
-                                  'Add ',
+                                  'Cash in ',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 13.09,
@@ -532,6 +532,13 @@ class Upcomingtransationpage extends StatelessWidget {
                               fontWeight: FontWeight.w500,
                             ),
                             children: [
+                              const WidgetSpan(
+                                child: Icon(
+                                  Icons.arrow_downward_rounded,
+                                  size: 15,
+                                  color: Colors.green,
+                                ),
+                              ),
                               TextSpan(
                                 text: ' 4000 ',
                                 style: GoogleFonts.lato(
@@ -564,6 +571,13 @@ class Upcomingtransationpage extends StatelessWidget {
                               fontWeight: FontWeight.w500,
                             ),
                             children: [
+                              const WidgetSpan(
+                                child: Icon(
+                                  Icons.arrow_downward_rounded,
+                                  size: 15,
+                                  color: Colors.green,
+                                ),
+                              ),
                               TextSpan(
                                 text: ' 1000',
                                 style: GoogleFonts.lato(
@@ -717,7 +731,7 @@ class Upcomingtransationpage extends StatelessWidget {
                                     hintText: '₹ 657',
                                     hintStyle: const TextStyle(
                                       color: Color.fromARGB(255, 0, 0, 0),
-                                      fontSize: 10.78,
+                                      fontSize: 14.78,
                                       fontFamily: 'Roboto',
                                       fontWeight: FontWeight.w500,
                                     ),

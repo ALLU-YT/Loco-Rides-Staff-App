@@ -123,8 +123,8 @@ class _MainUpcomingDetailsPageState extends State<MainOnGoingPage>
                 indicatorColor: Colors.orange,
                 tabs: <Widget>[
                   _buildTab('Customer details'),
-                  _buildTab('Booking details'),
-                  _buildTab('Summery'),
+                  _buildTab('Vehicle details'),
+                  _buildTab('Booking'),
                   _buildTab('Transaction'),
                 ],
               );

@@ -188,7 +188,7 @@ class _CustomerDetailsState extends State<UpComingBookingDetails>
                                               height: 15,
                                             ),
                                             Text(
-                                              'Pickup',
+                                              'Dropoff',
                                               style: TextStyle(
                                                 color: Color(0xFF6E6E6E),
                                                 fontSize: 11.78,
@@ -341,7 +341,9 @@ class _CustomerDetailsState extends State<UpComingBookingDetails>
                                       ),
                                       IconButton(
                                         color: Colors.red,
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          _showPopupQr(context);
+                                        },
                                         icon: const Icon(Icons.close),
                                       ),
                                     ],
@@ -853,4 +855,91 @@ class _CounterBottomSheetState extends State<CounterBottomSheet> {
       ],
     );
   }
+}
+
+void _showPopupQr(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        content: const Text("Do you want to cancel?"),
+        actions: <Widget>[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Container(
+                width: MediaQuery.of(context).size.width * 0.3,
+                decoration: BoxDecoration(
+                  gradient: const LinearGradient(
+                    colors: [
+                      Color.fromARGB(255, 197, 231, 6),
+                      Color.fromARGB(255, 0, 255, 13)
+                    ],
+                  ),
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.transparent,
+                    shadowColor: Colors.transparent,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: const Text(
+                    'No',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 13.09,
+                      fontFamily: 'Roboto',
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(
+                width: 5,
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width * 0.3,
+                decoration: BoxDecoration(
+                  gradient: const LinearGradient(
+                    colors: [
+                      Color.fromARGB(255, 243, 147, 2),
+                      Color.fromARGB(255, 255, 208, 0)
+                    ],
+                  ),
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.transparent,
+                    shadowColor: Colors.transparent,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: const Text(
+                    'Yes',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 13.09,
+                      fontFamily: 'Roboto',
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
+      );
+    },
+  );
 }

@@ -49,7 +49,7 @@ class OnGoingTransationPage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'Delay the drop of charge :',
+                              'Delay drop of charge :',
                               style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 14,
@@ -77,7 +77,7 @@ class OnGoingTransationPage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              ' Delay the rent of charge :',
+                              ' Delay rental fine 3 * pl :',
                               style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 14,
@@ -127,37 +127,228 @@ class OnGoingTransationPage extends StatelessWidget {
                           ],
                         ),
                       ),
-                      Container(
-                        margin: const EdgeInsets.only(bottom: 10),
-                        child: const Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Total Amount :',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 14,
-                                fontFamily: 'Roboto',
-                                fontWeight: FontWeight.w500,
-                                height: 0,
-                              ),
-                            ),
-                            Text(
-                              '₹ 500',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 14,
-                                fontFamily: 'Roboto',
-                                fontWeight: FontWeight.w500,
-                                height: 0,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
+                      // Container(
+                      //   margin: const EdgeInsets.only(bottom: 10),
+                      //   child: const Row(
+                      //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      //     children: [
+                      //       Text(
+                      //         'Total Amount :',
+                      //         style: TextStyle(
+                      //           color: Colors.black,
+                      //           fontSize: 14,
+                      //           fontFamily: 'Roboto',
+                      //           fontWeight: FontWeight.w500,
+                      //           height: 0,
+                      //         ),
+                      //       ),
+                      //       Text(
+                      //         '₹ 500',
+                      //         style: TextStyle(
+                      //           color: Colors.black,
+                      //           fontSize: 14,
+                      //           fontFamily: 'Roboto',
+                      //           fontWeight: FontWeight.w500,
+                      //           height: 0,
+                      //         ),
+                      //       ),
+                      //     ],
+                      //   ),
+                      // ),
                     ],
                   ),
                 ),
+                const SizedBox(
+                  height: 15,
+                ),
+                Container(
+                    width: MediaQuery.of(context).size.width * 0.9,
+                    // height: 100.0,
+                    decoration: BoxDecoration(
+                      color: const Color.fromARGB(255, 255, 255, 255),
+                      borderRadius: BorderRadius.circular(10),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.2),
+                          offset: const Offset(4, 4),
+                          blurRadius: 10,
+                          spreadRadius: 1,
+                        ),
+                        BoxShadow(
+                          color: Colors.white.withOpacity(0.7),
+                          offset: const Offset(-4, -4),
+                          blurRadius: 10,
+                          spreadRadius: 1,
+                        ),
+                      ],
+                    ),
+                    child: Container(
+                      margin: const EdgeInsets.all(10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            'Extra KM Charges',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontFamily: 'Roboto',
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          const Divider(),
+                          const Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              // Text(
+                              //   '₹ 1000',
+                              //   style: TextStyle(
+                              //     color: Colors.black,
+                              //     fontSize: 30,
+                              //     fontFamily: 'Roboto',
+                              //     fontWeight: FontWeight.w600,
+                              //   ),
+                              // ),
+                            ],
+                          ),
+                          // RichText(
+                          //   text: TextSpan(
+                          //     style: const TextStyle(
+                          //       color: Colors.black,
+                          //       fontSize: 15,
+                          //       fontFamily: 'Roboto',
+                          //       fontWeight: FontWeight.w500,
+                          //     ),
+                          //     children: [
+                          //       WidgetSpan(
+                          //         child: Container(
+                          //           margin: const EdgeInsets.symmetric(
+                          //               horizontal: 4.0, vertical: 6),
+                          //           decoration: const BoxDecoration(
+                          //             color: Colors.black,
+                          //             shape: BoxShape.circle,
+                          //           ),
+                          //           width: 5.0,
+                          //           height: 5.0,
+                          //         ),
+                          //       ),
+                          //       const TextSpan(
+                          //           text: ' 4000 ', style: TextStyle(fontSize: 13)),
+                          //       const TextSpan(
+                          //           text: ' added Gpay',
+                          //           style: TextStyle(fontSize: 13)),
+                          //     ],
+                          //   ),
+                          // ),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          // RichText(
+                          //   text: TextSpan(
+                          //     style: const TextStyle(
+                          //       color: Colors.black,
+                          //       fontSize: 15,
+                          //       fontFamily: 'Roboto',
+                          //       fontWeight: FontWeight.w500,
+                          //     ),
+                          //     children: [
+                          //       WidgetSpan(
+                          //         child: Container(
+                          //           margin: const EdgeInsets.symmetric(
+                          //               horizontal: 4.0, vertical: 6),
+                          //           decoration: const BoxDecoration(
+                          //             color: Colors.black,
+                          //             shape: BoxShape.circle,
+                          //           ),
+                          //           width: 5.0,
+                          //           height: 5.0,
+                          //         ),
+                          //       ),
+                          //       const TextSpan(
+                          //           text: ' 1000', style: TextStyle(fontSize: 13)),
+                          //       const TextSpan(
+                          //           text: ' added on cash',
+                          //           style: TextStyle(fontSize: 13)),
+                          //     ],
+                          //   ),
+                          // ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          Row(
+                            children: [
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width * 0.2,
+                                height: 50,
+                                child: TextField(
+                                  decoration: InputDecoration(
+                                    hintText: '₹ 657',
+                                    hintStyle: const TextStyle(
+                                      color: Color.fromARGB(255, 0, 0, 0),
+                                      fontSize: 14.78,
+                                      fontFamily: 'Roboto',
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                    contentPadding: const EdgeInsets.symmetric(
+                                        vertical: 10.0, horizontal: 10.0),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderSide: const BorderSide(
+                                          width: 1, color: Color(0xFFD9D9D9)),
+                                      borderRadius: BorderRadius.circular(50),
+                                    ),
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: const BorderSide(
+                                          width: 1, color: Color(0xFFD9D9D9)),
+                                      borderRadius: BorderRadius.circular(50),
+                                    ),
+                                  ),
+                                  style: const TextStyle(
+                                    color: Color(0xFF6E6E6E),
+                                    fontSize: 10.78,
+                                    fontFamily: 'Roboto',
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              Container(
+                                width: MediaQuery.of(context).size.width * 0.6,
+                                height: 50,
+                                decoration: BoxDecoration(
+                                  gradient: const LinearGradient(
+                                    colors: [
+                                      Colors.orange,
+                                      Color.fromARGB(225, 245, 147, 1)
+                                    ],
+                                  ),
+                                  borderRadius: BorderRadius.circular(50.0),
+                                ),
+                                child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.transparent,
+                                    shadowColor: Colors.transparent,
+                                  ),
+                                  onPressed: () {
+                                    _showPopup(context);
+                                  },
+                                  child: const Text(
+                                    'Request Payment',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 13.09,
+                                      fontFamily: 'Roboto',
+                                      fontWeight: FontWeight.w700,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    )),
                 const SizedBox(
                   height: 15,
                 ),
@@ -414,7 +605,7 @@ class OnGoingTransationPage extends StatelessWidget {
                             Container(
                               padding: const EdgeInsets.only(top: 5, bottom: 8),
                               child: const Text(
-                                'Balance to add',
+                                'Balance to provide cash out',
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 14,
@@ -438,15 +629,14 @@ class OnGoingTransationPage extends StatelessWidget {
                         Row(
                           children: [
                             SizedBox(
-                              width:
-                                  MediaQuery.of(context).size.width * 0.2 + 20,
+                              width: MediaQuery.of(context).size.width * 0.4,
                               height: 50,
                               child: TextField(
                                 decoration: InputDecoration(
                                   hintText: '₹ 657',
                                   hintStyle: const TextStyle(
                                     color: Color.fromARGB(255, 0, 0, 0),
-                                    fontSize: 10.78,
+                                    fontSize: 14.78,
                                     fontFamily: 'Roboto',
                                     fontWeight: FontWeight.w500,
                                   ),
@@ -472,11 +662,10 @@ class OnGoingTransationPage extends StatelessWidget {
                               ),
                             ),
                             const SizedBox(
-                              width: 8,
+                              width: 10,
                             ),
                             Container(
-                              width:
-                                  MediaQuery.of(context).size.width * 0.2 + 20,
+                              width: MediaQuery.of(context).size.width * 0.4,
                               height: 50,
                               decoration: BoxDecoration(
                                 gradient: const LinearGradient(
@@ -496,7 +685,7 @@ class OnGoingTransationPage extends StatelessWidget {
                                   _showPopup(context);
                                 },
                                 child: const Text(
-                                  'Add ',
+                                  'Cash out ',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 13.09,
@@ -509,15 +698,15 @@ class OnGoingTransationPage extends StatelessWidget {
                             const SizedBox(
                               width: 8,
                             ),
-                            SizedBox(
-                              height: 50,
-                              width: MediaQuery.of(context).size.width * 0.3,
-                              child: ElevatedButton(
-                                  onPressed: () {
-                                    _showPopuppQr(context);
-                                  },
-                                  child: const Text("Qr")),
-                            ),
+                            // SizedBox(
+                            //   height: 50,
+                            //   width: MediaQuery.of(context).size.width * 0.3,
+                            //   child: ElevatedButton(
+                            //       onPressed: () {
+                            //         _showPopuppQr(context);
+                            //       },
+                            //       child: const Text("Qr")),
+                            // ),
                           ],
                         ),
                         const SizedBox(
@@ -532,6 +721,13 @@ class OnGoingTransationPage extends StatelessWidget {
                               fontWeight: FontWeight.w500,
                             ),
                             children: [
+                              const WidgetSpan(
+                                child: Icon(
+                                  Icons.arrow_upward_outlined,
+                                  size: 15,
+                                  color: Colors.red,
+                                ),
+                              ),
                               TextSpan(
                                 text: ' 4000 ',
                                 style: GoogleFonts.lato(
@@ -564,6 +760,13 @@ class OnGoingTransationPage extends StatelessWidget {
                               fontWeight: FontWeight.w500,
                             ),
                             children: [
+                              const WidgetSpan(
+                                child: Icon(
+                                  Icons.arrow_upward_outlined,
+                                  size: 15,
+                                  color: Colors.red,
+                                ),
+                              ),
                               TextSpan(
                                 text: ' 1000',
                                 style: GoogleFonts.lato(
@@ -717,7 +920,7 @@ class OnGoingTransationPage extends StatelessWidget {
                                     hintText: '₹ 657',
                                     hintStyle: const TextStyle(
                                       color: Color.fromARGB(255, 0, 0, 0),
-                                      fontSize: 10.78,
+                                      fontSize: 14.78,
                                       fontFamily: 'Roboto',
                                       fontWeight: FontWeight.w500,
                                     ),

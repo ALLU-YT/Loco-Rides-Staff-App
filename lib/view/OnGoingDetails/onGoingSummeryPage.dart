@@ -245,20 +245,27 @@ class _CustomerDetailsState extends State<Ongoingsummerypage>
                   const SizedBox(
                     height: 20,
                   ),
-                  const Text(
-                    'Add On',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 15,
-                      fontFamily: 'Roboto',
-                      fontWeight: FontWeight.w600,
-                      height: 0.09,
-                    ),
+                  const Row(
+                    children: [
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        'Add On',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 15,
+                          fontFamily: 'Roboto',
+                          fontWeight: FontWeight.w600,
+                          height: 0.09,
+                        ),
+                      ),
+                    ],
                   ),
                   for (int i = 0; i < 3; i++)
                     Container(
-                        margin:
-                            const EdgeInsets.only(top: 15, left: 15, right: 15),
+                        margin: const EdgeInsets.only(
+                            top: 15, left: 15, right: 15, bottom: 5),
                         width: MediaQuery.of(context).size.width * 0.9,
                         decoration: ShapeDecoration(
                           color: Colors.white,
@@ -337,25 +344,32 @@ class _CustomerDetailsState extends State<Ongoingsummerypage>
                                   ),
                                 ],
                               ),
-                              ElevatedButton(
-                                style: ButtonStyle(
-                                  backgroundColor: WidgetStateProperty.all(
-                                      const Color.fromARGB(255, 255, 0, 0)),
-                                  foregroundColor: WidgetStateProperty.all(
-                                      const Color.fromARGB(255, 255, 255, 255)),
+                              Container(
+                                margin: const EdgeInsets.all(3),
+                                child: ElevatedButton(
+                                  style: ButtonStyle(
+                                    backgroundColor: WidgetStateProperty.all(
+                                        const Color.fromARGB(155, 0, 255, 8)),
+                                    foregroundColor: WidgetStateProperty.all(
+                                        const Color.fromARGB(
+                                            255, 255, 255, 255)),
+                                  ),
+                                  onPressed: () {},
+                                  child: const Text('Return'),
                                 ),
-                                onPressed: () {},
-                                child: const Text('Remove'),
                               ),
                             ],
                           ),
                         )),
+                  const SizedBox(
+                    height: 10,
+                  ),
                 ],
               ),
             ),
-            const SizedBox(
-              height: 10,
-            ),
+            // const SizedBox(
+            //   height: 10,
+            // ),
             Container(
               padding: const EdgeInsets.all(15),
               child: Column(
@@ -378,7 +392,7 @@ class _CustomerDetailsState extends State<Ongoingsummerypage>
                     width: MediaQuery.of(context).size.width * 0.9,
                     height: 130.0,
                     decoration: BoxDecoration(
-                      color: const Color.fromARGB(209, 241, 239, 239),
+                      color: const Color.fromARGB(255, 255, 255, 255),
                       borderRadius: BorderRadius.circular(10),
                       boxShadow: [
                         BoxShadow(
@@ -398,6 +412,8 @@ class _CustomerDetailsState extends State<Ongoingsummerypage>
                     child: Column(
                       children: [
                         Container(
+                          height: 40,
+                          width: MediaQuery.of(context).size.width * 0.9,
                           margin:
                               const EdgeInsets.only(left: 5, right: 5, top: 8),
                           child: const TextField(
@@ -429,7 +445,7 @@ class _CustomerDetailsState extends State<Ongoingsummerypage>
                                   hintText: '₹ 657',
                                   hintStyle: const TextStyle(
                                     color: Color.fromARGB(255, 0, 0, 0),
-                                    fontSize: 10.78,
+                                    fontSize: 14.78,
                                     fontFamily: 'Roboto',
                                     fontWeight: FontWeight.w500,
                                   ),

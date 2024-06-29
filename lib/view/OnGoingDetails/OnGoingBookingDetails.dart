@@ -131,7 +131,7 @@ class _CustomerDetailsState extends State<OnGoingBookingDetails>
                                             height: 15,
                                           ),
                                           Text(
-                                            'Pickup',
+                                            'Dropoff',
                                             style: TextStyle(
                                               color: Color(0xFF6E6E6E),
                                               fontSize: 11.78,
@@ -859,6 +859,7 @@ class _DropdownContainerState extends State<DropdownContainer> {
               });
             },
             style: ElevatedButton.styleFrom(
+              backgroundColor: const Color.fromARGB(255, 240, 237, 237),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.14),
               ),
@@ -887,11 +888,15 @@ class _DropdownContainerState extends State<DropdownContainer> {
           ),
         ),
         AnimatedContainer(
-          padding: const EdgeInsets.fromLTRB(14, 10, 10, 10),
+          margin: const EdgeInsets.fromLTRB(8, 0, 8, 0),
+          padding: const EdgeInsets.fromLTRB(5, 5, 0, 0),
           duration: const Duration(seconds: 1),
           curve: Curves.ease,
-          height: _isExpanded ? 250.0 : 0.0,
-          color: Colors.white,
+          height: _isExpanded ? 230.0 : 0.0,
+          // decoration: const BoxDecoration(
+          //   backgroundColor: Color.fromARGB(255, 240, 237, 237),
+          // ),
+          color: const Color.fromARGB(255, 240, 237, 237),
           child: _isExpanded
               ? Column(
                   children: [
