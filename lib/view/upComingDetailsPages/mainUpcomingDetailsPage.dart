@@ -125,7 +125,7 @@ class _MainUpcomingDetailsPageState extends State<MainUpcomingDetailsPage>
                   _buildTab('Customer details'),
                   _buildTab('Booking details'),
                   _buildTab('Transaction'),
-                  _buildTab('Upcoming'),
+                  _buildTab('Vehicle'),
                 ],
               );
             },

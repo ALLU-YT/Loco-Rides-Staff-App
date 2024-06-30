@@ -2,10 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:loco_rides_staff_app/controler/CustomerDetailsNextButtonProvider.dart';
 import 'package:provider/provider.dart';
+import 'package:slidable_button/slidable_button.dart';
 
-class OnGoingTransationPage extends StatelessWidget {
+class OnGoingTransationPage extends StatefulWidget {
   const OnGoingTransationPage({super.key});
 
+  @override
+  State<OnGoingTransationPage> createState() => _OnGoingTransationPageState();
+}
+
+class _OnGoingTransationPageState extends State<OnGoingTransationPage> {
   @override
   Widget build(BuildContext context) {
     final tabProvider = Provider.of<TabProvider>(context, listen: false);
@@ -438,6 +444,45 @@ class OnGoingTransationPage extends StatelessWidget {
                             const CustomCheckboxDemo()
                           ],
                         ),
+                        const SizedBox(
+                          height: 8,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            RichText(
+                              text: const TextSpan(
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 15,
+                                  fontFamily: 'Roboto',
+                                  fontWeight: FontWeight.w500,
+                                ),
+                                children: [
+                                  TextSpan(
+                                    text: '₹ 358 ',
+                                    style: TextStyle(fontSize: 13),
+                                  ),
+                                  WidgetSpan(
+                                    child: Padding(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 0.0, vertical: 2),
+                                        child: Image(
+                                          image: AssetImage(
+                                              'lib/assets/icons8-deposit-50.png'),
+                                          width: 18,
+                                        )),
+                                  ),
+                                  TextSpan(
+                                    text: ' deduct from deposit',
+                                    style: TextStyle(fontSize: 13),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            const CustomCheckboxDemo()
+                          ],
+                        ),
                         const Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -605,7 +650,7 @@ class OnGoingTransationPage extends StatelessWidget {
                             Container(
                               padding: const EdgeInsets.only(top: 5, bottom: 8),
                               child: const Text(
-                                'Balance to provide cash out',
+                                'Balance to provide',
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 14,
@@ -998,39 +1043,51 @@ class OnGoingTransationPage extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Container(
+                HorizontalSlidableButton(
                   width: MediaQuery.of(context).size.width * 0.9,
-                  decoration: BoxDecoration(
-                    gradient: const LinearGradient(
-                      colors: [Color(0xFFFF7134), Color(0xFFFF4D00)],
-                    ),
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.transparent,
-                      shadowColor: Colors.transparent,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                    ),
-                    onPressed: () {
-                      tabProvider.tabController
-                          .animateTo((tabProvider.selectedIndex + 1) % 4);
-                    },
-                    child: const Text(
-                      'Next',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 13.09,
-                        fontFamily: 'Roboto',
-                        fontWeight: FontWeight.w700,
-                        height:
-                            1.0, // Typically 1.0 or higher for better readability
+                  height: 60,
+                  buttonWidth: 60,
+                  color: Colors.orange,
+                  dismissible: true,
+                  label: const Center(
+                      child:
+                          Image(image: AssetImage('lib/assets/Frame 2.png'))),
+                  child: const Padding(
+                    padding: EdgeInsets.all(10),
+                    child: Center(
+                      child: Text(
+                        'Slide',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 14.76,
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.w500,
+                          height: 1.0,
+                        ),
                       ),
                     ),
                   ),
-                )
+                  onChanged: (position) {
+                    setState(() {
+                      if (position == SlidableButtonPosition.end) {
+                        // Update buttonLabel, appContent, appImage if necessary
+                        // buttonLabel = 'Slide Right';
+                        // appContent = 'Slide to check Out';
+                        // appImage = Image.asset(
+                        //   'assets/Mask group (1).png',
+                        //   width: 100,
+                        // );
+
+                        // buttonLabel = 'Slide Right';
+                        // appContent = 'Slide to check Out';
+                        // appImage = Image.asset(
+                        //   'assets/Mask group (1).png',
+                        //   width: 100,
+                        // );
+                      }
+                    });
+                  },
+                ),
               ],
             ))
       ],

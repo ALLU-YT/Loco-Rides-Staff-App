@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loco_rides_staff_app/view/upComingDetailsPages/mainUpcomingDetailsPage.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Upcomingpage extends StatefulWidget {
   const Upcomingpage({super.key});
@@ -247,10 +248,10 @@ class _UpcomingpageState extends State<Upcomingpage> {
                               const SizedBox(
                                 width: 40,
                               ),
-                              const Column(
+                              Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(
+                                  const Text(
                                     'Dropoff',
                                     textAlign: TextAlign.start,
                                     style: TextStyle(
@@ -264,10 +265,10 @@ class _UpcomingpageState extends State<Upcomingpage> {
                                   Column(
                                     crossAxisAlignment: CrossAxisAlignment.end,
                                     children: [
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 5,
                                       ),
-                                      Text(
+                                      const Text(
                                         '05 Sep 2029 | 10:00 am',
                                         style: TextStyle(
                                           color: Colors.black,
@@ -277,19 +278,42 @@ class _UpcomingpageState extends State<Upcomingpage> {
                                           height: 0,
                                         ),
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 8,
                                       ),
                                       Row(
                                         mainAxisAlignment:
                                             MainAxisAlignment.end,
                                         children: [
-                                          Image(
-                                            image: AssetImage(
-                                                'lib/assets/Calling.png'),
-                                            width: 50,
-                                            fit: BoxFit.cover,
-                                          ),
+                                          IconButton(
+                                            icon: Image.asset(
+                                              'lib/assets/Calling.png',
+                                              width: 50,
+                                              fit: BoxFit.cover,
+                                            ),
+                                            onPressed: () async {
+                                              const String phoneNumber =
+                                                  '1234567890'; // Replace with the desired telephone number
+
+                                              final Uri telUri = Uri(
+                                                scheme: 'tel',
+                                                path: phoneNumber,
+                                              );
+
+                                              try {
+                                                if (await canLaunchUrl(
+                                                    telUri)) {
+                                                  await launchUrl(telUri);
+                                                } else {
+                                                  throw Exception(
+                                                      'Could not launch $telUri');
+                                                }
+                                              } catch (e) {
+                                                print(
+                                                    'Error launching URL: $e');
+                                              }
+                                            },
+                                          )
                                         ],
                                       ),
                                     ],

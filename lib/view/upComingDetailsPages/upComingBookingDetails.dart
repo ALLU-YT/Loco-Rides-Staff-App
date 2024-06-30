@@ -258,7 +258,7 @@ class _CustomerDetailsState extends State<UpComingBookingDetails>
                           for (int i = 0; i < 5; i++)
                             Container(
                                 margin: const EdgeInsets.only(top: 15),
-                                width: 339,
+                                width: MediaQuery.of(context).size.width * 0.9,
                                 decoration: ShapeDecoration(
                                   color: Colors.white,
                                   shape: RoundedRectangleBorder(
