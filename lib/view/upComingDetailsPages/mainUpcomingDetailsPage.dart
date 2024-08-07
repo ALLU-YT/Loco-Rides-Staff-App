@@ -109,6 +109,7 @@ class _MainUpcomingDetailsPageState extends State<MainUpcomingDetailsPage>
           ),
         ),
       ),
+      
       body: Column(
         children: [
           const SizedBox(
